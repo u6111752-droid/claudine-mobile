@@ -1,0 +1,7481 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:ital,wght@0,400;0,500;0,600;1,300;1,400&display=swap");
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+  color: #29231f;
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* PORTADA */
+.hero {
+  min-height: 100svh;
+  padding: 32px 4%;
+  background: #e9dfd7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar nav a {
+  font-size: 11px;
+  transition: opacity 0.3s ease;
+}
+
+.navbar nav a:hover {
+  opacity: 0.5;
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 2.2 / 1;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.hero-info h1 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 76px);
+  letter-spacing: -0.055em;
+  font-weight: 600;
+  color: #796251;
+  line-height: 1;
+}
+
+.hero-info p {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #796251;
+}
+
+.explore-btn {
+  border: 1px solid #796251;
+  padding: 13px 20px;
+  font-size: 10px;
+  white-space: nowrap;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #796251;
+  color: white;
+}
+
+/* FONS ÚNIC: POEMA + GALERIA */
+.work-background {
+  position: relative;
+  width: 100%;
+  background-color: #080808;
+  background-image: url("imatges/fons1.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+/* INTRODUCCIÓ */
+.intro {
+  position: relative;
+  min-height: 100svh;
+  padding: 6%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  max-width: 55%;
+  color: #f1ece7;
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 1.4s ease,
+    transform 1.4s ease;
+}
+
+.intro-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro h2 {
+  margin: 0 0 35px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(30px, 4vw, 68px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.intro-poem {
+  margin: 0 0 0 35px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-style: italic;
+  line-height: 1.5;
+  color: #e4dfdb;
+}
+
+/* GALERIA: ESTRUCTURA FIXA */
+.gallery-horizontal {
+  --grey-opacity: 0;
+  --ivory-opacity: 0;
+  --gallery-text: #f5f2ed;
+
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 580px;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+  color: var(--gallery-text);
+}
+
+/* CAPES FIXES DE FONS */
+.gallery-backdrops {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gallery-backdrop {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.gallery-backdrop-grey {
+  background-color: #a49a95;
+  background-image: url("imatges/fons2.png");
+  opacity: var(--grey-opacity);
+}
+
+.gallery-backdrop-ivory {
+  background-color: #f4f1ed;
+  background-image: url("imatges/fons3.png");
+  opacity: var(--ivory-opacity);
+}
+
+/* TÍTOL FIX */
+.gallery-horizontal > .gallery-header {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: max-content;
+  max-width: 90%;
+  margin: 0;
+  text-align: left;
+  color: var(--gallery-text);
+  pointer-events: none;
+}
+
+.gallery-header span {
+  display: block;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.gallery-header h2 {
+  margin: 4px 0 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  text-align: left;
+}
+
+/* NOMÉS LES TARGETES ES DESPLACEN */
+.gallery-scroll {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+
+.gallery-panel {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* COMPOSICIÓ DE LES TARGETES */
+.gallery-grid {
+  width: min(1100px, 88%);
+  margin: 0 auto;
+  padding-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
+}
+
+.gallery-card {
+  flex: 0 1 220px;
+  width: 220px;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  color: var(--gallery-text);
+}
+
+.gallery-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1px solid #8c2424;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.gallery-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+/* IMATGES INICIALS I HOVER */
+.gallery-image .symbol-image {
+  opacity: 1;
+}
+
+.gallery-image .project-image {
+  opacity: 0;
+}
+
+.gallery-card > span {
+  opacity: 0;
+  transform: translateY(8px);
+  text-align: center;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-image,
+.gallery-card:focus-visible .gallery-image {
+  transform: scale(1.12);
+}
+
+.gallery-card:hover .symbol-image,
+.gallery-card:focus-visible .symbol-image {
+  opacity: 0;
+}
+
+.gallery-card:hover .project-image,
+.gallery-card:focus-visible .project-image {
+  opacity: 1;
+}
+
+.gallery-card:hover > span,
+.gallery-card:focus-visible > span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-card:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 6px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .gallery-grid {
+    width: 94%;
+    gap: 3%;
+  }
+
+  .gallery-card {
+    flex-basis: 190px;
+    width: 190px;
+  }
+}
+
+/* MÒBIL */
+@media (max-width: 700px) {
+  .hero {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .navbar nav {
+    gap: 14px;
+  }
+
+  .navbar nav a {
+    font-size: 9px;
+  }
+
+  .hero-image {
+    aspect-ratio: auto;
+    min-height: 45svh;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-info h1 {
+    font-size: 36px;
+  }
+
+  .intro {
+    min-height: 75svh;
+    padding: 8%;
+    align-items: flex-end;
+    padding-bottom: 15%;
+  }
+
+  .intro-content {
+    max-width: 100%;
+  }
+
+  .intro h2 {
+    font-size: 36px;
+  }
+
+  .intro-poem {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .gallery-horizontal {
+    height: 80svh;
+    min-height: 480px;
+  }
+
+  .gallery-horizontal > .gallery-header {
+    top: 9%;
+  }
+
+  .gallery-header span {
+    font-size: 32px;
+  }
+
+  .gallery-header h2 {
+    font-size: 22px;
+  }
+
+  .gallery-grid {
+    width: 94%;
+    gap: 10px;
+    padding-top: 65px;
+  }
+
+  .gallery-card {
+    flex: 1 1 0;
+    font-size: 9px;
+  }
+
+  .gallery-image {
+    border-radius: 10px;
+  }
+
+  .gallery-card > span {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ACCESSIBILITAT */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .intro-content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .gallery-image,
+  .gallery-image img,
+  .gallery-card > span {
+    transition: none;
+  }
+}
+
+/* ZOOM NOMÉS A LA IMATGE DELS PEIXOS */
+
+.gallery-card[href="#painting"] .gallery-image img {
+  transform: scale(1.25);
+  object-position: center;
+}
+
+/* PORTADA BLOQUEJADA */
+
+html.portada-bloquejada,
+html.portada-bloquejada body {
+  overflow-y: hidden;
+}
+
+html.portfolio-actiu {
+  scroll-padding-top: 0;
+}
+
+/* ===============================
+   PROJECT OVERLAY — BASE
+================================ */
+
+.project-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  background: #1a060a;
+  color: #f5eeee;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 650ms ease,
+    visibility 650ms ease;
+}
+
+.project-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.project-page {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.project-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 35px 5%;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+
+.project-close,
+.project-back {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.project-close:hover,
+.project-back:hover {
+  text-decoration: underline;
+}
+
+.sublime-hero {
+  min-height: 100svh;
+  padding: 120px 8% 55px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.project-category {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.sublime-hero h1 {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.project-quote {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-style: italic;
+}
+
+.sublime-cover {
+  width: min(100%, 1100px);
+  max-height: 55vh;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 20px;
+
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 800ms ease,
+    transform 900ms ease;
+}
+
+.project-overlay.is-open .sublime-cover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-scroll {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.project-footer {
+  padding: 50px 5%;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .project-navbar {
+    padding: 24px;
+  }
+
+  .sublime-hero {
+    padding: 120px 24px 50px;
+  }
+
+  .sublime-cover {
+    max-height: 45vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-overlay,
+  .sublime-cover {
+    transition: none;
+  }
+}
+
+/* =====================================
+   LE SUBLIME — COMPOSICIÓ FIGMA
+===================================== */
+
+#project-sublime {
+  background: #210306;
+  color: #f0dfdc;
+}
+
+/* Barra superior */
+#project-sublime .project-navbar {
+  position: relative;
+  padding: 35px 3.5%;
+  width: 100%;
+}
+
+/* Portada */
+#project-sublime .sublime-hero {
+  min-height: auto;
+  padding: 65px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+/* Categoria */
+#project-sublime .project-category {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #d6b9b8;
+  margin: 0 0 32px;
+}
+
+/* Títol com al Figma */
+#project-sublime .sublime-hero h1 {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(32px, 3.7vw, 56px);
+  font-weight: 300;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 0 20px 32px;
+  color: #f0dfdc;
+}
+
+/* Frase */
+#project-sublime .project-quote {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 20px 35px;
+  color: #d9b6b5;
+}
+
+/* Imatge completa, sense retallar */
+#project-sublime .sublime-cover {
+  display: block;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Indicador de scroll */
+#project-sublime .project-scroll {
+  display: block;
+  margin: 30px auto 50px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+/* Mòbil */
+@media (max-width: 700px) {
+  #project-sublime .project-navbar {
+    padding: 24px 5%;
+  }
+
+  #project-sublime .sublime-hero {
+    padding-top: 65px;
+  }
+
+  #project-sublime .project-category {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  #project-sublime .sublime-hero h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  #project-sublime .project-quote {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  #project-sublime .sublime-cover {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+/* LE SUBLIME — EXPLORE MORE */
+
+#project-sublime .sublime-explore {
+  margin: 35px auto 55px;
+  padding: 12px 18px;
+  border: 0;
+  background: transparent;
+  color: #e8cecb;
+  font:
+    11px "Inter",
+    Arial,
+    sans-serif;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-sublime .sublime-explore:hover {
+  opacity: 0.55;
+}
+
+/* Contingut ocult inicialment */
+
+#project-sublime .sublime-more {
+  display: none;
+}
+
+#project-sublime .sublime-more.is-visible {
+  display: block;
+}
+
+/* Composició de les dues fotografies */
+
+#project-sublime .sublime-chapter {
+  min-height: 100svh;
+  padding: 100px 6% 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6%;
+}
+
+#project-sublime .sublime-photo-wrap {
+  position: relative;
+  width: 54%;
+  flex-shrink: 0;
+}
+
+#project-sublime .sublime-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+}
+
+#project-sublime .sublime-photo-label {
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  font:
+    10px "Inter",
+    Arial,
+    sans-serif;
+  color: #f0dfdc;
+}
+
+/* Text fotografia 02 */
+
+#project-sublime .sublime-chapter-text {
+  flex: 1;
+  color: #e9cfcc;
+}
+
+#project-sublime .sublime-chapter-text span,
+#project-sublime .sublime-chapter-text p {
+  font:
+    12px "Inter",
+    Arial,
+    sans-serif;
+}
+
+#project-sublime .sublime-chapter-text h2 {
+  margin: 12px 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 3vw, 43px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Fotografia 03 */
+
+#project-sublime .sublime-chapter-three {
+  flex-direction: column;
+  gap: 45px;
+}
+
+#project-sublime .sublime-chapter-three .sublime-photo-wrap {
+  width: min(70%, 900px);
+}
+
+#project-sublime .sublime-ending {
+  text-align: center;
+  color: #e9cfcc;
+}
+
+#project-sublime .sublime-ending h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(25px, 3vw, 42px);
+}
+
+#project-sublime .sublime-ending p {
+  margin-top: 10px;
+  font:
+    11px "Inter",
+    Arial,
+    sans-serif;
+  letter-spacing: 0.1em;
+}
+
+/* ANIMACIÓ PERSONALITZADA */
+
+#project-sublime .sublime-chapter {
+  opacity: 0;
+  transform: translateY(65px);
+  filter: blur(8px);
+  transition:
+    opacity 1.1s ease,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.1s ease;
+}
+
+#project-sublime .sublime-chapter.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Mòbil */
+
+@media (max-width: 700px) {
+  #project-sublime .sublime-chapter {
+    flex-direction: column;
+    padding: 90px 6%;
+    gap: 35px;
+  }
+
+  #project-sublime .sublime-photo-wrap,
+  #project-sublime .sublime-chapter-three .sublime-photo-wrap {
+    width: 100%;
+  }
+
+  #project-sublime .sublime-chapter-text {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-sublime .sublime-chapter {
+    transition: none;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* =====================================
+   LE SUBLIME — NAVEGACIÓ SEMPRE FIXA
+===================================== */
+
+/* Barra fixa durant tot el projecte */
+#project-sublime .project-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  padding: 35px 3.5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* CLAUDINE / 02 */
+#project-sublime .project-navbar span {
+  color: #f0dfdc;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* CLOSE × */
+#project-sublime .project-close {
+  color: #f0dfdc;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Mòbil */
+@media (max-width: 700px) {
+  #project-sublime .project-navbar {
+    padding: 24px 5%;
+  }
+}
+
+/* =====================================
+   LE SUBLIME — THE WOUND REVEAL V2
+===================================== */
+
+#project-sublime .sublime-wound-transition {
+  position: absolute;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+  background: transparent;
+}
+
+#project-sublime .wound-left,
+#project-sublime .wound-right {
+  position: absolute;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #120104;
+  opacity: 0;
+}
+
+#project-sublime .wound-left {
+  left: 0;
+}
+
+#project-sublime .wound-right {
+  right: 0;
+}
+
+#project-sublime .wound-crack {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: center;
+  opacity: 0;
+  background: #ff2444;
+  box-shadow:
+    0 0 25px 8px rgba(255, 30, 60, 0.9),
+    0 0 90px 25px rgba(220, 0, 35, 0.6);
+  z-index: 3;
+}
+
+/* Activació */
+
+#project-sublime .sublime-wound-transition.is-active {
+  visibility: visible;
+}
+
+#project-sublime .sublime-wound-transition.is-active .wound-crack {
+  animation: crackReveal 2.5s ease-in-out both;
+}
+
+#project-sublime .sublime-wound-transition.is-active .wound-left {
+  animation: openLeft 2.5s ease-in-out both;
+}
+
+#project-sublime .sublime-wound-transition.is-active .wound-right {
+  animation: openRight 2.5s ease-in-out both;
+}
+
+@keyframes crackReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
+  45% {
+    opacity: 1;
+    width: 16px;
+  }
+  70% {
+    opacity: 1;
+    width: 5px;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@keyframes openLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-105%);
+  }
+}
+
+@keyframes openRight {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(105%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-sublime .sublime-wound-transition {
+    display: none;
+  }
+}
+
+/* END OF PROJECT — NOMÉS TEXT */
+
+#project-sublime .sublime-end-button {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ===============================
+   PROJECTE 03 — EL LABERINT
+================================ */
+
+.laberint-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #080b0a;
+  color: #f5f2ed;
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.65s ease,
+    visibility 0.65s;
+}
+
+.laberint-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.laberint-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  padding: 32px 4%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #080b0a;
+}
+
+.laberint-navbar span,
+.laberint-close {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  color: #f5f2ed;
+}
+
+.laberint-close {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.laberint-content {
+  min-height: calc(100svh - 90px);
+  padding: 30px 5% 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.laberint-category {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+
+.laberint-content h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(48px, 7vw, 110px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.laberint-video {
+  width: min(1100px, 90%);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #000;
+}
+
+.laberint-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .laberint-navbar {
+    padding: 24px 5%;
+  }
+
+  .laberint-video {
+    width: 100%;
+  }
+}
+
+/* EL LABERINT — VIDEO GRAN ORIGINAL */
+
+#project-laberint .laberint-cover {
+  height: auto;
+  min-height: 100dvh;
+  padding: 125px 5% 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  overflow: visible;
+}
+
+#project-laberint .laberint-cover h1 {
+  font-size: clamp(50px, 7vw, 110px);
+  margin: 40px 0 20px;
+}
+
+#project-laberint .laberint-subtitle {
+  margin-bottom: 35px;
+}
+
+#project-laberint .laberint-video {
+  width: min(1100px, 90%);
+  max-height: none;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  flex: none;
+  border-radius: 28px;
+}
+
+#project-laberint .laberint-scroll-hint {
+  display: block;
+  margin: 35px auto 20px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #7e9e90;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+/* BLOQUEJAR FOTOGRAFIES FINS A EXPLORE MORE */
+
+#project-laberint.is-locked {
+  overflow-y: auto;
+}
+
+#project-laberint.is-locked .laberint-journey {
+  display: none;
+}
+
+#project-laberint.is-unlocked {
+  overflow-y: auto;
+}
+
+#project-laberint.is-unlocked .laberint-journey {
+  display: block;
+}
+
+/* EL LABERINT — VIDEO GRAN DEFINITIU */
+
+#project-laberint .laberint-cover {
+  height: auto;
+  min-height: 100dvh;
+  max-height: none;
+  overflow: visible;
+  padding: 125px 5% 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#project-laberint .laberint-video {
+  width: 90vw;
+  max-width: 1250px;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  flex: 0 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+#project-laberint .laberint-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#project-laberint.is-locked {
+  overflow-y: auto;
+}
+
+#project-laberint.is-locked .laberint-journey {
+  display: none;
+}
+
+#project-laberint.is-unlocked .laberint-journey {
+  display: block;
+}
+
+#project-laberint .laberint-scroll-hint {
+  margin: 35px auto 20px;
+  flex-shrink: 0;
+}
+
+/* 02 — THE SYMBOLS */
+
+#project-laberint .laberint-symbols {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#project-laberint .laberint-symbols h2 {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #7e9e90;
+  margin: 0 0 28px;
+}
+
+#project-laberint .laberint-symbols-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+#project-laberint .laberint-symbols-grid img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+}
+
+/* 03 — BEHIND THE DREAM */
+
+#project-laberint .laberint-behind {
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px auto 0;
+}
+
+#project-laberint .laberint-behind h2 {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #7e9e90;
+  margin-bottom: 28px;
+}
+
+#project-laberint .laberint-behind-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+#project-laberint .laberint-behind-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.85 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+/* FRASE ENTRE VIDEO I FOTOGRAFIES */
+
+#project-laberint .laberint-quote {
+  width: 100%;
+  padding: 140px 0 150px;
+  text-align: center;
+}
+
+#project-laberint .laberint-quote p {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 400;
+  font-style: italic;
+  color: #f5f2ed;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* =========================================
+   EL LABERINT — FINAL DEL PROJECTE
+========================================= */
+
+#project-laberint .laberint-ending {
+  width: 100%;
+  padding: 100px 0 40px;
+  text-align: center;
+}
+
+/* END OF PROJECT */
+
+#project-laberint .laberint-end-button {
+  display: inline-block;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 15px 25px;
+  margin: 0 auto;
+  color: #7e9e90;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-laberint .laberint-end-button:hover {
+  opacity: 0.5;
+}
+
+/* NAVEGACIÓ INFERIOR */
+
+#project-laberint .laberint-bottom-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+/* BOTONS INFERIORS */
+
+#project-laberint .laberint-back,
+#project-laberint .laberint-next {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  color: #7e9e90;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-laberint .laberint-back:hover,
+#project-laberint .laberint-next:hover {
+  opacity: 0.5;
+}
+
+/* =========================================
+   04 — THE MODERN COVEN OF LIGHT
+========================================= */
+
+#project-modern-coven {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #10091e;
+  color: #f4eff9;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s;
+  scrollbar-width: none;
+}
+
+#project-modern-coven::-webkit-scrollbar {
+  display: none;
+}
+
+#project-modern-coven.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* NAVEGACIÓ FIXA */
+
+#project-modern-coven .coven-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+}
+
+#project-modern-coven .coven-close {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* PORTADA */
+
+#project-modern-coven .coven-cover {
+  min-height: 100dvh;
+  padding: 130px 5% 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#project-modern-coven .coven-category {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #bba4d7;
+}
+
+#project-modern-coven .coven-cover h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 5vw, 76px);
+  font-style: italic;
+  font-weight: 400;
+  margin: 20px 0 45px;
+}
+
+#project-modern-coven .coven-hero-image {
+  width: min(1100px, 90%);
+}
+
+#project-modern-coven .coven-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+#project-modern-coven .coven-intro-quote {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(20px, 2.5vw, 34px);
+  font-style: italic;
+  margin: 55px 0 20px;
+}
+
+#project-modern-coven .coven-explore {
+  background: transparent;
+  border: 0;
+  color: #bba4d7;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* BLOQUEIG DEL RECORREGUT */
+
+#project-modern-coven.is-locked .coven-journey {
+  display: none;
+}
+
+#project-modern-coven.is-unlocked .coven-journey {
+  display: block;
+}
+
+/* CAPÍTOLS */
+
+#project-modern-coven .coven-journey {
+  width: 100%;
+  padding: 0 5% 80px;
+}
+
+#project-modern-coven .coven-chapter {
+  max-width: 1200px;
+  margin: 0 auto 150px;
+}
+
+#project-modern-coven .coven-chapter-heading {
+  margin-bottom: 35px;
+  color: #bba4d7;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+#project-modern-coven .coven-chapter img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+#project-modern-coven .coven-chapter-text h2,
+#project-modern-coven .coven-centered-text h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 38px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+#project-modern-coven .coven-chapter-text p,
+#project-modern-coven .coven-centered-text p {
+  font-size: 11px;
+  color: #bba4d7;
+  margin-top: 10px;
+}
+
+/* 02 — RITUALS */
+
+#project-modern-coven .coven-ritual-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+#project-modern-coven .coven-ritual-layout > img {
+  height: 550px;
+}
+
+#project-modern-coven .coven-ritual-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+#project-modern-coven .coven-ritual-right img {
+  height: 300px;
+}
+
+/* 03 — THE BEAUTY */
+
+#project-modern-coven .coven-beauty > img {
+  height: 500px;
+}
+
+#project-modern-coven .coven-centered-text {
+  text-align: center;
+  margin-top: 55px;
+}
+
+/* 04 — THE FAMILIAR */
+
+#project-modern-coven .coven-familiar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+#project-modern-coven .coven-familiar-grid img {
+  height: 430px;
+}
+
+/* 05 — THE KNOWLEDGE */
+
+#project-modern-coven .coven-knowledge-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 25px;
+}
+
+#project-modern-coven .coven-knowledge-layout > img {
+  height: 520px;
+}
+
+#project-modern-coven .coven-knowledge-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+#project-modern-coven .coven-knowledge-right img {
+  height: 300px;
+}
+
+/* 06 — FINAL */
+
+#project-modern-coven .coven-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#project-modern-coven .coven-final img {
+  width: min(550px, 80%);
+  height: auto;
+}
+
+#project-modern-coven .coven-final h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 3vw, 42px);
+  font-weight: 400;
+  font-style: italic;
+  margin: 65px 0 35px;
+}
+
+#project-modern-coven .coven-end-button {
+  background: transparent;
+  border: 0;
+  color: #bba4d7;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* ANIMACIÓ DELS CAPÍTOLS */
+
+#project-modern-coven .coven-chapter {
+  opacity: 0;
+  transform: translateY(55px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+#project-modern-coven .coven-chapter.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MÒBIL */
+
+@media (max-width: 700px) {
+  #project-modern-coven .coven-cover {
+    padding: 110px 5% 50px;
+  }
+
+  #project-modern-coven .coven-hero-image {
+    width: 100%;
+  }
+
+  #project-modern-coven .coven-ritual-layout,
+  #project-modern-coven .coven-knowledge-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #project-modern-coven .coven-familiar-grid {
+    gap: 10px;
+  }
+
+  #project-modern-coven .coven-ritual-layout > img,
+  #project-modern-coven .coven-beauty > img,
+  #project-modern-coven .coven-familiar-grid img,
+  #project-modern-coven .coven-knowledge-layout > img {
+    height: auto;
+  }
+
+  #project-modern-coven .coven-chapter {
+    margin-bottom: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-modern-coven,
+  #project-modern-coven .coven-chapter {
+    transition: none;
+  }
+
+  #project-modern-coven .coven-chapter {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* MODERN COVEN — IMATGE DE PORTADA MÉS GRAN */
+
+#project-modern-coven .coven-hero-image {
+  width: 96%;
+  max-width: 1450px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#project-modern-coven .coven-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* MODERN COVEN — NAVEGACIÓ INFERIOR */
+
+#project-modern-coven .coven-bottom-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 110px;
+  padding: 0 0 45px;
+}
+
+#project-modern-coven .coven-back,
+#project-modern-coven .coven-next {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: #bba4d7;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-modern-coven .coven-back:hover,
+#project-modern-coven .coven-next:not(:disabled):hover {
+  opacity: 0.5;
+}
+
+#project-modern-coven .coven-next:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* MODERN COVEN — RECUPERAR END OF PROJECT */
+
+#project-modern-coven .coven-end-button {
+  display: block;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+
+  width: fit-content;
+  margin: 35px auto 0;
+  padding: 15px 20px;
+
+  background: transparent;
+  border: none;
+  color: #bba4d7;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-modern-coven .coven-end-button:hover {
+  opacity: 0.5;
+}
+
+/* MODERN COVEN — NAVEGACIÓ FINAL */
+
+#project-modern-coven .coven-bottom-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 0 45px;
+}
+
+#project-modern-coven .coven-back,
+#project-modern-coven .coven-next {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: #bba4d7;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 12px 0;
+}
+
+#project-modern-coven .coven-back {
+  cursor: pointer;
+}
+
+#project-modern-coven .coven-next:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* =========================================
+   05 — FRAGILE MASCULINITY
+========================================= */
+
+/* OVERLAY PRINCIPAL */
+
+#project-fragile {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+
+  background: #a49a95;
+  color: #29231f;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+#project-fragile *,
+#project-fragile *::before,
+#project-fragile *::after {
+  box-sizing: border-box;
+}
+
+#project-fragile::-webkit-scrollbar {
+  display: none;
+}
+
+#project-fragile.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================================
+   NAVEGACIÓ FIXA
+========================================= */
+
+#project-fragile .fragile-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 4%;
+  margin-bottom: -78px;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+
+  pointer-events: none;
+}
+
+#project-fragile .fragile-navbar span {
+  color: #29231f;
+}
+
+#project-fragile .fragile-close {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #29231f;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#project-fragile .fragile-close:hover {
+  opacity: 0.55;
+}
+
+/* =========================================
+   01 — PORTADA
+========================================= */
+
+#project-fragile .fragile-cover {
+  min-height: 100dvh;
+  padding: 135px 5% 75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#project-fragile .fragile-cover-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+#project-fragile .fragile-cover-heading span {
+  display: block;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #403a37;
+}
+
+#project-fragile .fragile-cover-heading h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(40px, 5vw, 76px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+#project-fragile .fragile-cover-heading p {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(18px, 2vw, 28px);
+  font-style: italic;
+  margin: 0;
+}
+
+/* FOTOGRAFIES PORTADA */
+
+#project-fragile .fragile-cover-grid {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+#project-fragile .fragile-cover-grid img {
+  display: block;
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+#project-fragile .fragile-cover-grid img:nth-child(2) {
+  height: 430px;
+}
+
+/* EXPLORE MORE */
+
+#project-fragile .fragile-explore {
+  appearance: none;
+  background: transparent;
+  border: 0;
+
+  color: #29231f;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+
+  margin: 55px auto 0;
+  padding: 18px;
+  cursor: pointer;
+
+  transition: opacity 0.3s ease;
+}
+
+#project-fragile .fragile-explore:hover {
+  opacity: 0.5;
+}
+
+/* =========================================
+   BLOQUEIG FINS A EXPLORE MORE
+========================================= */
+
+#project-fragile.is-locked .fragile-journey {
+  display: none;
+}
+
+#project-fragile.is-unlocked .fragile-journey {
+  display: block;
+}
+
+/* =========================================
+   CONTINGUT GENERAL
+========================================= */
+
+#project-fragile .fragile-journey {
+  width: 100%;
+  padding: 50px 5% 80px;
+}
+
+#project-fragile .fragile-chapter {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 150px;
+}
+
+#project-fragile .fragile-chapter-label {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  margin-bottom: 35px;
+}
+
+#project-fragile .fragile-chapter img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* TIPOGRAFIA */
+
+#project-fragile .fragile-text h2,
+#project-fragile .fragile-centered-text h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(26px, 3vw, 44px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+#project-fragile .fragile-text span,
+#project-fragile .fragile-text p {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+#project-fragile .fragile-centered-text {
+  text-align: center;
+  margin: 45px auto 65px;
+}
+
+#project-fragile .fragile-image-caption {
+  text-align: center;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  margin-top: 40px;
+}
+
+/* =========================================
+   02 — VULNERABILITY
+========================================= */
+
+#project-fragile .fragile-vulnerability-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+#project-fragile .fragile-vulnerability-layout > img {
+  height: 620px;
+  border-radius: 4px;
+}
+
+#project-fragile .fragile-text {
+  max-width: 440px;
+}
+
+/* =========================================
+   03 — BEYOND THE SURFACE
+========================================= */
+
+#project-fragile .fragile-surface-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+#project-fragile .fragile-surface-grid > img {
+  height: 520px;
+  border-radius: 4px;
+}
+
+#project-fragile .fragile-surface-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+  min-height: 0;
+}
+
+#project-fragile .fragile-surface-right img {
+  height: 251px;
+  border-radius: 4px;
+}
+
+/* =========================================
+   04 — BETWEEN EXPECTATIONS
+========================================= */
+
+#project-fragile .fragile-expectations-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+}
+
+#project-fragile .fragile-expectations-grid > img {
+  height: 580px;
+  border-radius: 4px;
+}
+
+#project-fragile .fragile-expectations-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+
+#project-fragile .fragile-expectations-right img {
+  height: 281px;
+  border-radius: 4px;
+}
+
+/* =========================================
+   05 — THE BODY BECOMES A LANGUAGE
+========================================= */
+
+#project-fragile .fragile-final-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+#project-fragile .fragile-final-left {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+
+#project-fragile .fragile-final-left img {
+  height: 270px;
+  border-radius: 4px;
+}
+
+#project-fragile .fragile-final-grid > img {
+  height: 480px;
+  border-radius: 4px;
+}
+
+/* =========================================
+   END OF PROJECT
+========================================= */
+
+#project-fragile .fragile-ending {
+  width: 100%;
+  text-align: center;
+  padding: 90px 0 30px;
+}
+
+#project-fragile .fragile-ending p {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  margin-bottom: 25px;
+}
+
+#project-fragile .fragile-end-button {
+  appearance: none;
+  display: inline-block;
+
+  background: transparent;
+  border: 0;
+  color: #29231f;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-fragile .fragile-end-button:hover {
+  opacity: 0.5;
+}
+
+/* =========================================
+   NAVEGACIÓ INFERIOR
+========================================= */
+
+#project-fragile .fragile-bottom-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 100px;
+  padding-bottom: 35px;
+}
+
+#project-fragile .fragile-back,
+#project-fragile .fragile-next {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #29231f;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+
+  padding: 12px 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#project-fragile .fragile-back:hover,
+#project-fragile .fragile-next:not(:disabled):hover {
+  opacity: 0.5;
+}
+
+#project-fragile .fragile-next:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* =========================================
+   ANIMACIONS DELS CAPÍTOLS
+========================================= */
+
+#project-fragile .fragile-chapter {
+  opacity: 0;
+  transform: translateY(55px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+#project-fragile .fragile-chapter.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  #project-fragile .fragile-cover-grid {
+    gap: 15px;
+  }
+
+  #project-fragile .fragile-vulnerability-layout {
+    gap: 25px;
+  }
+
+  #project-fragile .fragile-chapter {
+    margin-bottom: 110px;
+  }
+}
+
+/* =========================================
+   MÒBIL
+========================================= */
+
+@media (max-width: 700px) {
+  #project-fragile .fragile-navbar {
+    padding: 22px 5%;
+    margin-bottom: -60px;
+  }
+
+  #project-fragile .fragile-cover {
+    padding: 110px 5% 45px;
+  }
+
+  #project-fragile .fragile-cover-grid {
+    gap: 10px;
+  }
+
+  #project-fragile .fragile-cover-grid img {
+    height: 330px;
+  }
+
+  #project-fragile .fragile-cover-grid img:nth-child(2) {
+    height: 270px;
+  }
+
+  #project-fragile .fragile-journey {
+    padding: 35px 5% 60px;
+  }
+
+  #project-fragile .fragile-vulnerability-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  #project-fragile .fragile-vulnerability-layout > img {
+    height: 350px;
+  }
+
+  #project-fragile .fragile-surface-grid,
+  #project-fragile .fragile-expectations-grid,
+  #project-fragile .fragile-final-grid {
+    gap: 10px;
+  }
+
+  #project-fragile .fragile-surface-grid > img,
+  #project-fragile .fragile-expectations-grid > img {
+    height: 330px;
+  }
+
+  #project-fragile .fragile-surface-right,
+  #project-fragile .fragile-expectations-right,
+  #project-fragile .fragile-final-left {
+    gap: 10px;
+  }
+
+  #project-fragile .fragile-surface-right img,
+  #project-fragile .fragile-expectations-right img,
+  #project-fragile .fragile-final-left img {
+    height: 160px;
+  }
+
+  #project-fragile .fragile-final-grid > img {
+    height: 330px;
+  }
+
+  #project-fragile .fragile-chapter {
+    margin-bottom: 100px;
+  }
+
+  #project-fragile .fragile-bottom-nav {
+    margin-top: 65px;
+  }
+
+  #project-fragile .fragile-back,
+  #project-fragile .fragile-next {
+    font-size: 10px;
+  }
+}
+
+/* =========================================
+   MOVIMENT REDUÏT
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-fragile,
+  #project-fragile .fragile-chapter {
+    transition: none;
+  }
+
+  #project-fragile .fragile-chapter {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================
+   FINAL — FRAGILE MASCULINITY
+========================================= */
+
+/* =========================================
+   FRAGILE MASCULINITY — COMPOSICIÓ FIGMA
+   Fotografies completes, sense retalls
+========================================= */
+
+/* PORTADA */
+
+#project-fragile .fragile-cover-grid {
+  width: min(1100px, 94%);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+#project-fragile .fragile-cover-grid img,
+#project-fragile .fragile-cover-grid img:first-child,
+#project-fragile .fragile-cover-grid img:nth-child(2) {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* 02 — RETRAT VERTICAL */
+
+#project-fragile .fragile-vulnerability-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+#project-fragile .fragile-vulnerability-layout > img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* 03 — TRES RETRATS */
+
+#project-fragile .fragile-surface-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+#project-fragile .fragile-surface-grid > img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+#project-fragile .fragile-surface-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#project-fragile .fragile-surface-right img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* 04 — MIRALL I GUITARRA */
+
+#project-fragile .fragile-expectations-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.75fr;
+  gap: 14px;
+  align-items: start;
+}
+
+#project-fragile .fragile-expectations-grid > img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+#project-fragile .fragile-expectations-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#project-fragile .fragile-expectations-right img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* 05 — PINTURA CORPORAL I FLORS */
+
+#project-fragile .fragile-final-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr;
+  gap: 14px;
+  align-items: start;
+}
+
+#project-fragile .fragile-final-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#project-fragile .fragile-final-left img,
+#project-fragile .fragile-final-grid > img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* MÒBIL */
+
+@media (max-width: 700px) {
+  #project-fragile .fragile-cover-grid,
+  #project-fragile .fragile-surface-grid,
+  #project-fragile .fragile-expectations-grid,
+  #project-fragile .fragile-final-grid {
+    gap: 8px;
+  }
+
+  #project-fragile .fragile-vulnerability-layout {
+    gap: 12px;
+  }
+
+  #project-fragile .fragile-surface-right,
+  #project-fragile .fragile-expectations-right,
+  #project-fragile .fragile-final-left {
+    gap: 8px;
+  }
+}
+
+/* 03 — BEYOND THE LABELS */
+
+#project-fragile .fragile-surface-grid {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Fotografia vertical esquerra */
+
+#project-fragile .fragile-surface-grid > img {
+  display: block;
+  width: 100%;
+  height: 600px;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Contenidor de les dues fotografies dreta */
+
+#project-fragile .fragile-surface-right {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  height: 690px;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Fotografies horitzontals dreta */
+
+#project-fragile .fragile-surface-right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Fotografia superior dreta */
+#project-fragile .fragile-surface-right img:first-child {
+  object-position: center 40%;
+}
+
+/* Fotografia inferior dreta */
+#project-fragile .fragile-surface-right img:last-child {
+  object-position: center 60%;
+}
+
+@media (max-width: 700px) {
+  #project-fragile .fragile-surface-grid > img,
+  #project-fragile .fragile-surface-right {
+    height: 340px;
+  }
+}
+
+/* ==========================================
+   PROJECT 06 — THE FASHION INDUSTRY
+========================================== */
+
+#project-fashion {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #f5f3f0;
+  color: #282421;
+  font-family: Arial, sans-serif;
+  scrollbar-width: none;
+}
+
+#project-fashion::-webkit-scrollbar {
+  display: none;
+}
+
+#project-fashion.is-open {
+  display: block;
+}
+
+/* ==========================================
+   NAVEGACIÓ FIXA
+========================================== */
+
+#project-fashion .fashion-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 5%;
+  pointer-events: none;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+#project-fashion .fashion-navbar button {
+  pointer-events: auto;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ==========================================
+   CONTINGUT GENERAL
+========================================== */
+
+#project-fashion .fashion-content {
+  width: 100%;
+}
+
+#project-fashion .fashion-cover {
+  min-height: 100vh;
+  padding: 110px 5% 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#project-fashion .fashion-eyebrow {
+  margin: 15px 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-align: center;
+}
+
+#project-fashion .fashion-cover h1 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 62px);
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+#project-fashion .fashion-subtitle {
+  margin: 14px 0 45px;
+  font-family: Georgia, serif;
+  font-size: clamp(15px, 1.5vw, 22px);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ==========================================
+   01 — PORTADA EDITORIAL
+========================================== */
+
+#project-fashion .fashion-cover-layout {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 40px auto 0;
+}
+
+#project-fashion .fashion-cover-collage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+}
+
+#project-fashion .fashion-cover-collage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#project-fashion .fashion-cover-value {
+  position: absolute;
+  left: 73%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #292522;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#project-fashion .fashion-cover-statement {
+  min-height: 560px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#project-fashion .fashion-cover-statement span {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5vw, 75px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+#project-fashion .fashion-cover-statement small {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+/* ==========================================
+   EXPLORE MORE
+========================================== */
+
+#project-fashion .fashion-explore {
+  margin: 38px auto 0;
+  padding: 15px;
+  border: none;
+  background: transparent;
+  color: #3c3531;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+#project-fashion .fashion-explore:hover {
+  opacity: 0.55;
+}
+
+/* ==========================================
+   BLOQUEIG INICIAL
+========================================== */
+
+#project-fashion.is-locked {
+  overflow-y: auto;
+}
+
+#project-fashion.is-locked .fashion-journey {
+  display: none;
+}
+
+#project-fashion.is-unlocked .fashion-journey {
+  display: block;
+}
+
+/* ==========================================
+   CAPÍTOLS
+========================================== */
+
+#project-fashion .fashion-chapter {
+  padding: 125px 5% 90px;
+  max-width: 1500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#project-fashion .fashion-section-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+#project-fashion .fashion-section-heading span {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+#project-fashion .fashion-section-heading h2 {
+  margin: 18px auto 12px;
+  max-width: 850px;
+  font-family: Georgia, serif;
+  font-size: clamp(26px, 3.2vw, 46px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+#project-fashion .fashion-section-heading p {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* ==========================================
+   02 — BRANDED BODIES
+   COMPOSICIÓ CORREGIDA
+========================================== */
+
+/*
+   5.1.jpg — esquerra, composició editorial
+   1.1.jpg — dreta superior
+   4.1.jpg — dreta inferior
+
+   Ampliem 5.1 sense moure la dreta.
+*/
+
+#project-fashion #fashion-branded .fashion-editorial-image {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+
+  width: 100%;
+  max-width: 1400px;
+  margin: 45px auto 0;
+
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* ESQUERRA — 5.1.jpg */
+
+#project-fashion #fashion-branded .fashion-branded-left {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+#project-fashion #fashion-branded .fashion-branded-left img {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+  height: auto;
+  max-height: none;
+
+  object-fit: contain;
+  object-position: top left;
+
+  border-radius: 0;
+  transform: none;
+}
+
+/* DRETA — 1.1.jpg i 4.1.jpg */
+
+#project-fashion #fashion-branded .fashion-branded-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+#project-fashion #fashion-branded .fashion-branded-right img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 0;
+  transform: none;
+}
+
+/* ==========================================
+   03 — STRIPPED OF LABELS
+========================================== */
+
+#project-fashion .fashion-labels-layout {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+#project-fashion .fashion-labels-layout > img {
+  display: block;
+  width: 100%;
+  height: 680px;
+  object-fit: cover;
+}
+
+#project-fashion .fashion-labels-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  min-height: 0;
+}
+
+#project-fashion .fashion-labels-right img {
+  display: block;
+  width: 100%;
+  height: 332px;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* ==========================================
+   FINAL
+========================================== */
+
+#project-fashion .fashion-ending {
+  padding: 90px 20px 20px;
+  text-align: center;
+}
+
+#project-fashion .fashion-ending h2 {
+  margin: 0 auto 24px;
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 3vw, 43px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+#project-fashion .fashion-ending p {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+/* ==========================================
+   NAVEGACIÓ INFERIOR
+========================================== */
+
+#project-fashion .fashion-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+  padding: 120px 5% 45px;
+  box-sizing: border-box;
+}
+
+#project-fashion .fashion-bottom-nav button {
+  border: 0;
+  padding: 10px 0;
+  background: transparent;
+  color: #282421;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+#project-fashion .fashion-bottom-nav button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 700px) {
+  #project-fashion .fashion-navbar {
+    padding: 24px 5%;
+  }
+
+  #project-fashion .fashion-cover {
+    padding-top: 105px;
+  }
+
+  #project-fashion .fashion-cover-layout {
+    width: 100%;
+  }
+
+  #project-fashion .fashion-cover-collage img {
+    height: auto;
+  }
+
+  #project-fashion .fashion-cover-value {
+    font-size: 9px;
+  }
+
+  #project-fashion .fashion-cover-statement {
+    min-height: 240px;
+  }
+
+  #project-fashion .fashion-chapter {
+    padding-top: 90px;
+  }
+
+  /* BRANDED BODIES MÒBIL */
+
+  #project-fashion #fashion-branded .fashion-editorial-image {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #project-fashion #fashion-branded .fashion-branded-left,
+  #project-fashion #fashion-branded .fashion-branded-right {
+    width: 100%;
+  }
+
+  #project-fashion #fashion-branded .fashion-branded-right {
+    gap: 12px;
+  }
+
+  /* STRIPPED OF LABELS MÒBIL */
+
+  #project-fashion .fashion-labels-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #project-fashion .fashion-labels-layout > img {
+    height: auto;
+  }
+
+  #project-fashion .fashion-labels-right {
+    grid-template-rows: auto auto;
+  }
+
+  #project-fashion .fashion-labels-right img {
+    height: auto;
+  }
+
+  #project-fashion .fashion-bottom-nav {
+    padding-top: 90px;
+  }
+}
+
+/* ==========================================
+   PROJECT 06 — 03 STRIPPED OF LABELS
+   AJUST FOTOGRAFIES DRETA
+========================================== */
+
+#project-fashion .fashion-labels-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Fotografia gran esquerra: no modificar */
+
+#project-fashion .fashion-labels-layout > img {
+  width: 100%;
+  height: 680px;
+  object-fit: cover;
+}
+
+/* Contenidor dret */
+
+#project-fashion .fashion-labels-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 680px;
+  min-height: 0;
+}
+
+/* Ampliar les imatges dins dels blocs */
+
+#project-fashion .fashion-labels-right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  background: #fff;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  #project-fashion .fashion-labels-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #project-fashion .fashion-labels-layout > img {
+    height: auto;
+  }
+
+  #project-fashion .fashion-labels-right {
+    height: auto;
+    grid-template-rows: auto auto;
+  }
+
+  #project-fashion .fashion-labels-right img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* ==========================================
+   PROJECT 07 — APE STUDIOS
+========================================== */
+
+#project-ape {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #f8f3f3;
+  color: #292421;
+  font-family: Arial, sans-serif;
+  scrollbar-width: none;
+}
+
+#project-ape::-webkit-scrollbar {
+  display: none;
+}
+
+#project-ape.is-open {
+  display: block;
+}
+
+#project-ape * {
+  box-sizing: border-box;
+}
+
+/* NAVEGACIÓ FIXA */
+
+#project-ape .ape-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34px 5%;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+#project-ape .ape-navbar button {
+  pointer-events: auto;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* PORTADA */
+
+#project-ape .ape-cover {
+  min-height: 100vh;
+  padding: 125px 5% 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#project-ape .ape-cover-heading,
+#project-ape .ape-heading {
+  text-align: center;
+}
+
+#project-ape .ape-cover-heading span,
+#project-ape .ape-heading span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+#project-ape .ape-cover-heading h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(35px, 4vw, 58px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+#project-ape .ape-cover-heading p {
+  margin: 0 0 65px;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* TRES FOTOGRAFIES PORTADA */
+
+#project-ape .ape-cover-grid {
+  width: 100%;
+  max-width: 1350px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#project-ape .ape-cover-grid img {
+  display: block;
+  width: 100%;
+  height: clamp(360px, 37vw, 590px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+/* EXPLORE MORE */
+
+#project-ape .ape-explore {
+  margin: 45px auto 0;
+  padding: 15px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+#project-ape .ape-explore:hover {
+  opacity: 0.55;
+}
+
+/* DESBLOQUEIG */
+
+#project-ape.is-locked .ape-journey {
+  display: none;
+}
+
+#project-ape.is-unlocked .ape-journey {
+  display: block;
+}
+
+/* CAPÍTOLS */
+
+#project-ape .ape-chapter {
+  padding: 100px 5% 120px;
+}
+
+#project-ape .ape-heading {
+  margin-bottom: 65px;
+}
+
+#project-ape .ape-heading h2 {
+  margin: 15px auto 0;
+  font-family: Georgia, serif;
+  font-size: clamp(26px, 3vw, 44px);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* 02 — ELEGANCE IN SIMPLICITY */
+
+#project-ape .ape-light {
+  background: #f8f3f3;
+}
+
+#project-ape .ape-elegance-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  max-width: 1350px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+#project-ape .ape-elegance-main {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+  object-position: center;
+}
+
+#project-ape .ape-elegance-right {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  height: 720px;
+  min-height: 0;
+}
+
+#project-ape .ape-elegance-right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 03 — BEAUTY BEYOND THE LIGHT */
+
+#project-ape .ape-dark {
+  background: #050505;
+  color: #f4eeee;
+}
+
+#project-ape .ape-shadow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+#project-ape .ape-shadow-grid img {
+  display: block;
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 04 — A DIFFERENT WAY OF SEEING */
+
+#project-ape .ape-blue {
+  background: #1e4389;
+  color: #f7f5f1;
+}
+
+#project-ape .ape-blue-gallery {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+#project-ape .ape-blue-main {
+  display: block;
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+#project-ape .ape-blue-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+#project-ape .ape-blue-bottom img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* FINAL */
+
+#project-ape .ape-ending {
+  margin: 140px auto 0;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+/* NAVEGACIÓ INFERIOR */
+
+#project-ape .ape-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 110px;
+}
+
+#project-ape .ape-bottom-nav button {
+  padding: 12px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  #project-ape .ape-navbar {
+    padding: 24px 5%;
+  }
+
+  #project-ape .ape-cover {
+    padding-top: 110px;
+  }
+
+  #project-ape .ape-cover-grid {
+    gap: 8px;
+  }
+
+  #project-ape .ape-cover-grid img {
+    height: 230px;
+  }
+
+  #project-ape .ape-chapter {
+    padding: 90px 5% 100px;
+  }
+
+  #project-ape .ape-elegance-grid {
+    gap: 8px;
+  }
+
+  #project-ape .ape-elegance-main,
+  #project-ape .ape-elegance-right {
+    height: 430px;
+  }
+
+  #project-ape .ape-elegance-right {
+    gap: 8px;
+  }
+
+  #project-ape .ape-shadow-grid {
+    gap: 8px;
+  }
+
+  #project-ape .ape-shadow-grid img {
+    height: 300px;
+  }
+
+  #project-ape .ape-blue-main {
+    height: 300px;
+  }
+
+  #project-ape .ape-blue-bottom {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  #project-ape .ape-blue-bottom img {
+    height: 190px;
+  }
+
+  #project-ape .ape-ending {
+    margin-top: 100px;
+  }
+
+  #project-ape .ape-bottom-nav {
+    margin-top: 90px;
+  }
+}
+/* APE STUDIOS — AJUSTAR ENQUADRAMENT */
+
+/* 02 — ELEGANCE IN SIMPLICITY */
+#project-ape .ape-elegance-main {
+  object-position: center 23%;
+}
+
+#project-ape .ape-elegance-right img:first-child {
+  object-position: center 24%;
+}
+
+#project-ape .ape-elegance-right img:last-child {
+  object-position: center 35%;
+}
+
+/* 04 — A DIFFERENT WAY OF SEEING */
+#project-ape .ape-blue-main {
+  object-position: center 30%;
+}
+
+#project-ape .ape-blue-bottom img:first-child {
+  object-position: center 30%;
+}
+
+#project-ape .ape-blue-bottom img:last-child {
+  object-position: center 30%;
+}
+
+/* ==========================================
+   PROJECT 08 — FRAGMENTS OF SUMMER
+========================================== */
+
+#project-summer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #f2ede5;
+  color: #51483e;
+  font-family: Arial, sans-serif;
+  scrollbar-width: none;
+}
+
+#project-summer::-webkit-scrollbar {
+  display: none;
+}
+
+#project-summer.is-open {
+  display: block;
+}
+
+/* NAVEGACIÓ FIXA */
+
+#project-summer .summer-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 5%;
+  pointer-events: none;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+#project-summer .summer-navbar button {
+  pointer-events: auto;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* PORTADA */
+
+#project-summer .summer-cover {
+  min-height: 100vh;
+  padding: 125px 5% 65px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#project-summer .summer-cover-heading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+#project-summer .summer-cover-heading span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+#project-summer .summer-cover h1 {
+  margin: 20px 0 10px;
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 4vw, 62px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+#project-summer .summer-cover-heading p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+#project-summer .summer-cover-image {
+  display: block;
+  width: 100%;
+  max-width: 1350px;
+  height: min(56vw, 610px);
+  object-fit: cover;
+  object-position: center 55%;
+  border-radius: 8px;
+}
+
+#project-summer .summer-explore {
+  margin: 36px auto 0;
+  padding: 15px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+/* DESBLOQUEIG */
+
+#project-summer.is-locked .summer-journey {
+  display: none;
+}
+
+#project-summer.is-unlocked .summer-journey {
+  display: block;
+}
+
+/* CAPÍTOLS */
+
+#project-summer .summer-chapter {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 110px 5% 50px;
+  box-sizing: border-box;
+}
+
+#project-summer .summer-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+#project-summer .summer-heading span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+#project-summer .summer-heading h2 {
+  margin: 15px auto 0;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 43px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* 02 — GOLDEN HOURS */
+
+#project-summer .summer-golden-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+#project-summer .summer-golden-grid > img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#project-summer .summer-golden-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 500px;
+  min-height: 0;
+}
+
+#project-summer .summer-golden-side img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#project-summer .summer-color-block {
+  background: #d8a98d;
+  border-radius: 6px;
+}
+
+/* 03 — SUMMER MEMORIES */
+
+#project-summer .summer-memories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+#project-summer .summer-memories-grid img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#project-summer .summer-wide-image {
+  display: block;
+  width: 100%;
+  height: 550px;
+  margin-top: 16px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+/* 04 — BETWEEN LAND AND SEA */
+
+#project-summer .summer-land-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 16px;
+  align-items: start;
+}
+
+#project-summer .summer-land-left {
+  display: block;
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#project-summer .summer-land-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 530px;
+  min-height: 0;
+}
+
+#project-summer .summer-land-right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* 05 — THE LAST LIGHT */
+
+#project-summer .summer-final-image {
+  display: block;
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+#project-summer .summer-ending {
+  text-align: center;
+  padding: 80px 20px 25px;
+}
+
+#project-summer .summer-ending h2 {
+  margin: 0 auto 25px;
+  max-width: 950px;
+  font-family: Georgia, serif;
+  font-size: clamp(23px, 3vw, 42px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+#project-summer .summer-ending p {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+/* NAVEGACIÓ INFERIOR */
+
+#project-summer .summer-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 100px 5% 45px;
+  box-sizing: border-box;
+}
+
+#project-summer .summer-bottom-nav button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 10px 0;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+#project-summer button:hover {
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  #project-summer .summer-navbar {
+    padding: 24px 5%;
+  }
+
+  #project-summer .summer-cover {
+    padding-top: 110px;
+  }
+
+  #project-summer .summer-cover-image {
+    height: 55vh;
+  }
+
+  #project-summer .summer-chapter {
+    padding-top: 80px;
+  }
+
+  #project-summer .summer-golden-grid,
+  #project-summer .summer-memories-grid,
+  #project-summer .summer-land-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #project-summer .summer-golden-grid > img,
+  #project-summer .summer-wide-image,
+  #project-summer .summer-final-image {
+    height: 320px;
+  }
+
+  #project-summer .summer-golden-side,
+  #project-summer .summer-land-right {
+    height: auto;
+    grid-template-rows: none;
+  }
+
+  #project-summer .summer-golden-side img,
+  #project-summer .summer-land-right img {
+    height: 220px;
+  }
+
+  #project-summer .summer-memories-grid img {
+    height: 300px;
+  }
+
+  #project-summer .summer-land-left {
+    height: 380px;
+  }
+
+  #project-summer .summer-bottom-nav {
+    padding-top: 70px;
+  }
+}
+
+/* PROJECT 08 — GOLDEN HOURS — SUM4 */
+
+#project-summer .summer-golden-landscape {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   PROJECT 09 — AN INNER WORLD
+========================================== */
+
+#project-painting {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #f3ede3;
+  color: #38332e;
+  font-family: Arial, sans-serif;
+  scrollbar-width: none;
+}
+
+#project-painting::-webkit-scrollbar {
+  display: none;
+}
+
+#project-painting.is-open {
+  display: block;
+}
+
+/* NAVEGACIÓ FIXA */
+
+#project-painting .painting-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 5%;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+#project-painting .painting-navbar button {
+  pointer-events: auto;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* PORTADA */
+
+#project-painting .painting-cover {
+  min-height: 100vh;
+  padding: 140px 5% 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#project-painting .painting-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+#project-painting .painting-heading span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+#project-painting .painting-heading h1 {
+  margin: 18px 0 10px;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 58px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+#project-painting .painting-heading p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(15px, 1.5vw, 22px);
+  font-style: italic;
+  color: #81786f;
+}
+
+/* DUES PINTURES */
+
+/* PROJECT 09 — AN INNER WORLD */
+/* Fotografies ajustades al Figma */
+
+#project-painting .painting-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+#project-painting .painting-gallery img {
+  display: block;
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+/* Ampliar i centrar la pintura esquerra */
+#project-painting .painting-gallery img:first-child {
+  object-position: center center;
+}
+
+/* Ampliar i centrar la pintura dreta */
+#project-painting .painting-gallery img:last-child {
+  object-position: center center;
+}
+
+/* MÒBIL */
+@media (max-width: 700px) {
+  #project-painting .painting-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  #project-painting .painting-gallery img {
+    height: 520px;
+    object-fit: cover;
+  }
+}
+
+/* FRASE FINAL */
+
+#project-painting .painting-quote {
+  margin: 55px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 2vw, 30px);
+  font-style: italic;
+  text-align: center;
+  color: #a69b91;
+}
+
+/* SCROLL TO EXPLORE */
+
+#project-painting .painting-explore {
+  margin-top: 30px;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  color: #746a60;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+/* END OF PROJECT */
+
+#project-painting .painting-ending {
+  padding: 20px 5% 80px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+/* NAVEGACIÓ INFERIOR */
+
+#project-painting .painting-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 70px 5% 45px;
+}
+
+#project-painting .painting-bottom-nav button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#project-painting .painting-next:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  #project-painting .painting-navbar {
+    padding: 24px 5%;
+  }
+
+  #project-painting .painting-cover {
+    padding-top: 110px;
+  }
+
+  #project-painting .painting-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  #project-painting .painting-gallery img {
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+  }
+
+  #project-painting .painting-heading {
+    margin-bottom: 35px;
+  }
+
+  #project-painting .painting-bottom-nav {
+    padding-top: 50px;
+  }
+}
+
+/* PROJECT 09 — AN INNER WORLD */
+/* MÉS ZOOM A LES PINTURES */
+
+/* ==========================================
+   PROJECT 09 — PINTURES COM AL FIGMA
+========================================== */
+
+#project-painting .painting-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* CONTENIDORS INDEPENDENTS */
+
+#project-painting .painting-image {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* FOTOGRAFIES */
+
+#project-painting .painting-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+}
+
+/* ESQUERRA — CYCLE OF LIFE */
+
+#project-painting .painting-image:first-child img {
+  object-position: center;
+  transform: scale(1.12);
+}
+
+/* DRETA — VENUS */
+
+#project-painting .painting-image:last-child img {
+  object-position: center 55%;
+  transform: scale(1.5) translateX(5%);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  #project-painting .painting-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  #project-painting .painting-image {
+    height: 520px;
+  }
+}
+
+/* Evitar que el zoom surti dels blocs */
+#project-painting .painting-gallery {
+  overflow: hidden;
+}
+
+/* ==========================================
+   PROJECT 10 — RAW?
+========================================== */
+
+#project-raw {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+#project-raw::-webkit-scrollbar {
+  display: none;
+}
+
+#project-raw.is-open {
+  display: block;
+}
+
+/* BLOQUEIG DEL CONTINGUT */
+
+#project-raw.is-locked .raw-manifesto,
+#project-raw.is-locked .raw-gallery,
+#project-raw.is-locked .raw-ending {
+  display: none;
+}
+
+#project-raw.is-unlocked .raw-manifesto,
+#project-raw.is-unlocked .raw-gallery,
+#project-raw.is-unlocked .raw-ending {
+  display: block;
+}
+
+/* NAVEGACIÓ */
+
+#project-raw .raw-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 5%;
+  color: #56f04b;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+#project-raw .raw-navbar button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* PORTADA */
+
+#project-raw .raw-cover {
+  min-height: calc(100vh - 75px);
+  padding: 0 5% 70px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#project-raw .raw-eyebrow {
+  margin: 12px 0 16px;
+  color: #56f04b;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+#project-raw .raw-cover h1 {
+  margin: 0 0 35px;
+  font-size: clamp(65px, 9vw, 145px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* VÍDEO */
+
+#project-raw .raw-video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  aspect-ratio: 16 / 8;
+  border: 1px solid #666;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #090909;
+}
+
+#project-raw .raw-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#project-raw .raw-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76px;
+  height: 76px;
+  border: 3px solid #56f04b;
+  border-radius: 50%;
+  background: transparent;
+  color: #56f04b;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#project-raw .raw-video-caption {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  pointer-events: none;
+}
+
+#project-raw .raw-explore {
+  margin-top: 38px;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: #56f04b;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  cursor: pointer;
+}
+
+/* REVISTA */
+
+#project-raw .raw-manifesto {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 90px 5% 120px;
+  box-sizing: border-box;
+}
+
+#project-raw .raw-section-label {
+  color: #56f04b;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+#project-raw .raw-manifesto h2 {
+  margin: 25px 0 65px;
+  font-family: Georgia, serif;
+  font-size: clamp(26px, 3vw, 42px);
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+
+#project-raw .raw-magazine-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 7%;
+}
+
+#project-raw .raw-magazine-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#project-raw .raw-magazine-text h3 {
+  color: #56f04b;
+  font-size: clamp(50px, 7vw, 100px);
+  line-height: 0.9;
+}
+
+#project-raw .raw-magazine-line {
+  height: 1px;
+  background: #56f04b;
+  margin: 30px 0;
+}
+
+/* GALERIA EXPERIMENTAL */
+
+#project-raw .raw-gallery {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 110px 5% 140px;
+  box-sizing: border-box;
+}
+
+#project-raw .raw-gallery-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+#project-raw .raw-gallery-heading span {
+  color: #56f04b;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+#project-raw .raw-gallery-heading h2 {
+  margin: 20px 0;
+  font-size: clamp(32px, 5vw, 70px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+#project-raw .raw-gallery-heading p {
+  color: #aaa;
+  font-size: 12px;
+}
+
+#project-raw .raw-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#project-raw .raw-gallery-item {
+  height: 390px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #101010;
+}
+
+#project-raw .raw-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FINAL */
+
+#project-raw .raw-ending {
+  padding: 90px 5% 35px;
+  background: #000;
+}
+
+#project-raw .raw-end-label {
+  margin: 0 0 90px;
+  color: #56f04b;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+#project-raw .raw-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#project-raw .raw-bottom-nav button {
+  border: 0;
+  padding: 10px 0;
+  background: transparent;
+  color: #56f04b;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#project-raw .raw-bottom-nav button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  #project-raw .raw-navbar {
+    padding: 22px 5%;
+  }
+
+  #project-raw .raw-cover h1 {
+    font-size: 70px;
+  }
+
+  #project-raw .raw-video-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  #project-raw .raw-magazine-layout,
+  #project-raw .raw-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #project-raw .raw-gallery-item {
+    height: 320px;
+  }
+
+  #project-raw .raw-bottom-nav button {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================
+   03 / ABOUT ME
+========================================== */
+
+.about-section {
+  width: 100%;
+  padding: 90px 5%;
+  box-sizing: border-box;
+  background: #f5f0eb;
+  color: #292522;
+  font-family: Arial, sans-serif;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 45px 5% 55px;
+  box-sizing: border-box;
+  background: #f0e2d8;
+}
+
+.about-top {
+  padding-bottom: 22px;
+  border-bottom: 1px solid #a99b91;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  align-items: center;
+  gap: 7%;
+  margin-top: 30px;
+}
+
+/* FOTOGRAFIES */
+
+.about-photo-slider {
+  position: relative;
+  width: 100%;
+  height: 570px;
+  overflow: hidden;
+  background: #b9a69a;
+}
+
+/* ABOUT ME — CARRUSEL AMB MOVIMENT */
+
+.about-photo-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================
+   ABOUT ME — CARRUSEL CIRCULAR
+========================================== */
+
+.about-photo-slider {
+  position: relative;
+  width: 100%;
+  height: 570px;
+  overflow: hidden;
+  background: #b9a69a;
+}
+
+.about-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  transform: translateX(100%);
+  transition: none;
+  pointer-events: none;
+}
+
+.about-slide.is-active {
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.about-slide.is-exiting {
+  transform: translateX(-100%);
+  z-index: 2;
+}
+
+.about-slide.is-entering {
+  transform: translateX(0);
+  z-index: 3;
+}
+
+.about-slide.is-animating {
+  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.about-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-slide-counter {
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  z-index: 5;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 700px) {
+  .about-photo-slider {
+    height: 440px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-slide.is-animating {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* TEXT */
+
+.about-text h2 {
+  margin: 0 0 24px;
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.about-role {
+  margin: 0 0 28px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.about-description {
+  max-width: 460px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .about-section {
+    padding: 50px 4%;
+  }
+
+  .about-container {
+    padding: 25px 5% 40px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-photo-slider {
+    height: 440px;
+  }
+
+  .about-text h2 {
+    font-size: 42px;
+  }
+
+  .about-role {
+    font-size: 15px;
+  }
+
+  .about-description {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   ABOUT ME — FONS FIGMA SENSE MARGES
+========================================== */
+
+.about-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f0e2d8;
+  box-sizing: border-box;
+}
+
+.about-container {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 45px 5% 55px;
+
+  background-color: #f0e2d8;
+  background-image: url("imatges/about-texture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+}
+
+.about-layout {
+  max-width: 1400px;
+  margin: 30px auto 0;
+}
+
+.about-top {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    padding: 0;
+  }
+
+  .about-container {
+    min-height: 100dvh;
+    padding: 30px 5% 45px;
+  }
+}
+
+/* ==========================================
+   04 / CONTACT — DISSENY FIGMA
+========================================== */
+
+.contact-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #e9e0d8;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 55px 5% 40px;
+  box-sizing: border-box;
+
+  background: #e9e0d8;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* CAPÇALERA */
+
+.contact-top {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #a99b91;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+/* CONTINGUT CENTRAL */
+
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.contact-content h2 {
+  margin: 0 0 22px;
+  color: #292522;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.contact-content p {
+  margin: 0 0 38px;
+  color: #665b57;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* BOTÓ */
+
+.contact-button {
+  display: inline-block;
+  padding: 16px 28px;
+  border: 1px solid #292522;
+  background: transparent;
+  color: #292522;
+  text-decoration: none;
+  font-size: 13px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.contact-button:hover {
+  background: #292522;
+  color: #fff;
+}
+
+/* PEU DE PÀGINA */
+
+.contact-footer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid #a99b91;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 11px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 30px;
+}
+
+.contact-links a {
+  color: #292522;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  opacity: 0.55;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .contact-container {
+    min-height: 100dvh;
+    padding: 30px 5% 25px;
+  }
+
+  .contact-content {
+    padding: 65px 0;
+  }
+
+  .contact-content h2 {
+    font-size: 27px;
+  }
+
+  .contact-content p {
+    font-size: 14px;
+  }
+
+  .contact-footer {
+    font-size: 9px;
+  }
+
+  .contact-links {
+    gap: 15px;
+  }
+}
+
+/* ==========================================
+   GALERIA — ABOUT ME
+========================================== */
+
+.gallery-horizontal {
+  position: relative;
+}
+
+.gallery-about-link {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--gallery-text, #29231f);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: opacity 0.3s ease;
+}
+
+.gallery-about-link:hover {
+  opacity: 0.55;
+}
+
+@media (max-width: 700px) {
+  .gallery-about-link {
+    bottom: 20px;
+    font-size: 10px;
+  }
+}
+
+/* ==========================================
+   CONTACT — FONS AMB TEXTURA
+========================================== */
+
+.contact-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #eee2d9;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 55px 5% 40px;
+  box-sizing: border-box;
+
+  background-color: #eee2d9;
+  background-image: url("imatges/contact-texture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* MÒBIL */
+
+@media (max-width: 700px) {
+  .contact-container {
+    min-height: 100dvh;
+    padding: 30px 5% 25px;
+  }
+}
+
+/* ==========================================
+   PORTADA → POEMA
+   TRANSICIÓ CINEMATOGRÀFICA
+========================================== */
+
+/* Capa de fos a negre sobre la portada */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #080808;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.85s ease,
+    visibility 0s linear 0.85s;
+}
+
+/* Enfosquir la rosa */
+
+body.is-entering-work::after {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.85s ease,
+    visibility 0s;
+}
+
+/* Fer aparèixer el poema */
+
+body.is-revealing-work::after {
+  opacity: 0;
+  visibility: visible;
+  transition: opacity 1.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   RAW? — WHITE CHAOTIC GLITCH
+========================================== */
+
+/* ENTRADA DEL PROJECTE */
+
+#project-raw.is-open {
+  animation: rawEntrance 1.6s steps(1, end) both;
+}
+
+@keyframes rawEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-8px);
+    filter: contrast(140%);
+  }
+
+  12% {
+    opacity: 1;
+    transform: translateX(6px);
+    filter: brightness(1.3);
+  }
+
+  24% {
+    transform: translateX(-5px);
+    filter: contrast(180%);
+  }
+
+  36% {
+    transform: translateX(4px);
+    filter: brightness(1.5);
+  }
+
+  48% {
+    transform: translateX(-6px);
+    filter: contrast(200%);
+  }
+
+  60% {
+    transform: translateX(5px);
+    filter: brightness(1.2);
+  }
+
+  75% {
+    transform: translateX(-3px);
+    filter: contrast(140%);
+  }
+
+  90% {
+    transform: translateX(2px);
+    filter: none;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: none;
+  }
+}
+
+/* INTERFERÈNCIES BLANQUES ALS LATERALS */
+
+#project-raw::before,
+#project-raw::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 8%;
+  z-index: 10002;
+  pointer-events: none;
+
+  opacity: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 8px,
+    rgba(255, 255, 255, 0.85) 9px,
+    rgba(255, 255, 255, 0.85) 11px,
+    transparent 13px
+  );
+}
+
+#project-raw::before {
+  left: 0;
+}
+
+#project-raw::after {
+  right: 0;
+}
+
+/* ANIMACIÓ LATERAL */
+
+#project-raw.is-open::before {
+  animation: rawNoiseLeft 2s steps(1, end) both;
+}
+
+#project-raw.is-open::after {
+  animation: rawNoiseRight 2s steps(1, end) both;
+}
+
+@keyframes rawNoiseLeft {
+  0%,
+  15%,
+  35%,
+  55%,
+  75%,
+  100% {
+    opacity: 0;
+  }
+
+  8%,
+  28%,
+  48%,
+  68% {
+    opacity: 0.7;
+  }
+
+  20%,
+  40%,
+  60% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes rawNoiseRight {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  12%,
+  32%,
+  52%,
+  72% {
+    opacity: 0.65;
+  }
+
+  25%,
+  45%,
+  65% {
+    opacity: 0.2;
+  }
+}
+
+/* TÍTOL RAW? */
+
+#project-raw.is-open .raw-cover h1 {
+  animation: rawTitleGlitch 1.6s steps(1, end) both;
+}
+
+@keyframes rawTitleGlitch {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateX(8px);
+    color: #56f04b;
+  }
+
+  40% {
+    transform: translateX(-6px);
+    color: #fff;
+  }
+
+  60% {
+    transform: translateX(5px);
+    color: #56f04b;
+  }
+
+  80% {
+    transform: translateX(-2px);
+    color: #fff;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    color: #fff;
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-raw.is-open,
+  #project-raw.is-open .raw-cover h1,
+  #project-raw.is-open::before,
+  #project-raw.is-open::after {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   LE SUBLIME ET LE BLESSÉ
+   DARKNESS → INTENSE RED
+========================================== */
+
+/* FONS: DEL NEGRE AL VERMELL */
+
+#project-sublime.is-open .project-page {
+  animation: sublimeBackground 2.4s ease-in-out both;
+}
+
+/* VERMELL INTENS → VERMELL FOSC */
+
+@keyframes sublimeBackground {
+  0% {
+    background-color: #b30920;
+  }
+
+  25% {
+    background-color: #970b1a;
+  }
+
+  50% {
+    background-color: #790714;
+  }
+
+  75% {
+    background-color: #60040a;
+  }
+
+  100% {
+    background-color: #280101;
+  }
+}
+
+/* ==========================================
+   LE SUBLIME ET LE BLESSÉ
+   FADE-IN TEXT + FOTOGRAFIA
+========================================== */
+
+/* TÍTOL */
+
+#project-sublime.is-open .sublime-hero h1 {
+  animation: sublimeTitleReveal 2.4s ease-out both;
+}
+
+@keyframes sublimeTitleReveal {
+  0%,
+  25% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CATEGORIA I FRASE */
+
+#project-sublime.is-open .project-category,
+#project-sublime.is-open .project-quote {
+  animation: sublimeTextReveal 2.4s ease-out both;
+}
+
+@keyframes sublimeTextReveal {
+  0%,
+  35% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOTOGRAFIA PRINCIPAL */
+
+#project-sublime.is-open .sublime-cover {
+  animation: sublimePhotoReveal 2.4s ease-in-out both;
+}
+
+@keyframes sublimePhotoReveal {
+  0%,
+  40% {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-sublime.is-open .sublime-hero h1,
+  #project-sublime.is-open .project-category,
+  #project-sublime.is-open .project-quote,
+  #project-sublime.is-open .sublime-cover {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   PROJECT 03 — EL LABERINT
+   LOST IN THE BLUE
+========================================== */
+
+/* PREPARAR EL PROJECTE */
+
+#project-laberint {
+  isolation: isolate;
+}
+
+/* ==========================================
+   EL LABERINT — CINEMATIC BLUE LIGHT
+========================================== */
+
+/* LLUM BLAVA */
+
+#project-laberint::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background: radial-gradient(
+    ellipse 60% 75% at 50% 45%,
+    rgba(65, 135, 230, 0.55) 0%,
+    rgba(35, 85, 165, 0.38) 35%,
+    rgba(12, 35, 85, 0.22) 70%,
+    transparent 100%
+  );
+}
+
+/* ACTIVAR EN OBRIR */
+
+#project-laberint.is-open::after {
+  visibility: visible;
+  animation: laberintBlueLight 2.2s ease-in-out both;
+}
+
+/* EXPANSIÓ DE LA LLUM */
+
+@keyframes laberintBlueLight {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  35% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+
+  65% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+    visibility: hidden;
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-laberint.is-open::after {
+    animation: none;
+  }
+
+  #project-laberint::after {
+    display: none;
+  }
+}
+
+/* SUBTÍTOL */
+
+#project-laberint.is-open .laberint-subtitle,
+#project-laberint.is-open .laberint-category {
+  animation: laberintTextReveal 2.2s ease-out both;
+}
+
+@keyframes laberintTextReveal {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* VÍDEO */
+
+#project-laberint.is-open .laberint-video {
+  animation: laberintVideoReveal 2.2s ease-out both;
+}
+
+@keyframes laberintVideoReveal {
+  0%,
+  35% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-laberint.is-open::after,
+  #project-laberint.is-open .laberint-cover h1,
+  #project-laberint.is-open .laberint-subtitle,
+  #project-laberint.is-open .laberint-category,
+  #project-laberint.is-open .laberint-video {
+    animation: none;
+  }
+
+  #project-laberint::after {
+    display: none;
+  }
+}
+
+/* ==========================================
+   EL LABERINT — AJUST PORTADA DEFINITIU
+========================================== */
+
+#project-laberint .laberint-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  min-height: 100dvh;
+  padding: 45px 5% 50px;
+  box-sizing: border-box;
+}
+
+/* CATEGORIA */
+
+#project-laberint .laberint-category {
+  margin: 0 0 25px;
+}
+
+/* TÍTOL */
+
+#project-laberint .laberint-cover h1 {
+  margin: 0 0 25px;
+}
+
+/* SUBTÍTOL */
+
+#project-laberint .laberint-subtitle {
+  margin: 0 0 35px;
+}
+
+/* VÍDEO — RECUPERAR MIDA GRAN */
+
+#project-laberint .laberint-video {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+#project-laberint .laberint-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* MÒBIL */
+
+@media (max-width: 700px) {
+  #project-laberint .laberint-cover {
+    padding: 65px 5% 35px;
+  }
+
+  #project-laberint .laberint-cover h1 {
+    margin-bottom: 20px;
+  }
+
+  #project-laberint .laberint-video {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   EL LABERINT — TÍTOL MÉS AMUNT
+========================================== */
+
+/* EL LABERINT — CORREGIR TÍTOL I FRASES */
+
+/* Categoria: per sobre del títol */
+#project-laberint .laberint-category {
+  position: relative;
+  top: -65px;
+}
+
+/* Títol principal */
+#project-laberint .laberint-cover h1 {
+  position: relative;
+  top: -65px;
+}
+
+/* Frase inferior */
+#project-laberint .laberint-subtitle {
+  position: relative;
+  top: -35px;
+}
+
+/* ==========================================
+   LE SUBLIME — NAVEGACIÓ FINAL
+========================================== */
+
+#project-sublime .sublime-ending {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+#project-sublime .sublime-ending h2 {
+  margin: 60px 0 35px;
+}
+
+#project-sublime .sublime-end-button {
+  margin: 0;
+  cursor: default;
+}
+
+#project-sublime .sublime-bottom-nav {
+  width: 100%;
+  margin-top: auto;
+  padding: 90px 5% 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#project-sublime .sublime-bottom-nav button {
+  border: 0;
+  padding: 8px 0;
+  background: transparent;
+  color: #d9b6b6;
+
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+
+  transition: opacity 0.3s ease;
+}
+
+#project-sublime .sublime-bottom-nav button:hover {
+  opacity: 0.55;
+}
+
+@media (max-width: 700px) {
+  #project-sublime .sublime-bottom-nav {
+    padding: 65px 5% 25px;
+    gap: 20px;
+  }
+
+  #project-sublime .sublime-bottom-nav button {
+    font-size: 10px;
+  }
+}
+
+/* PROVA — NAVEGACIÓ LE SUBLIME */
+
+#project-sublime .sublime-wound-transition {
+  pointer-events: none;
+}
+
+#project-sublime .sublime-ending {
+  position: relative;
+  z-index: 20;
+}
+
+#project-sublime .sublime-bottom-nav {
+  position: relative;
+  z-index: 30;
+  pointer-events: auto;
+}
+
+#project-sublime .sublime-bottom-nav button {
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* ==========================================
+   SEGURETAT — OVERLAYS TANCATS
+========================================== */
+
+#project-raw:not(.is-open),
+#project-sublime:not(.is-open),
+#project-laberint:not(.is-open) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================
+   PROJECT 04 — THE MODERN COVEN OF LIGHT
+   THE AWAKENING
+========================================== */
+
+/* LLUMS LILES SOBRE LA PORTADA */
+
+#project-modern-coven .coven-cover {
+  position: relative;
+  isolation: isolate;
+}
+
+#project-modern-coven .coven-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 35%,
+      rgba(160, 90, 230, 0.65),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 45%,
+      rgba(115, 55, 200, 0.6),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(205, 140, 255, 0.5),
+      transparent 50%
+    );
+}
+
+/* ACTIVAR QUAN S'OBRE */
+
+#project-modern-coven.is-open .coven-cover::after {
+  visibility: visible;
+  animation: covenAwakening 2.6s ease-in-out both;
+}
+
+@keyframes covenAwakening {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  25% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+
+  55% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  80% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+    visibility: hidden;
+  }
+}
+
+/* TÍTOL */
+
+#project-modern-coven.is-open .coven-cover h1 {
+  animation: covenTitleReveal 2.6s ease-out both;
+}
+
+@keyframes covenTitleReveal {
+  0%,
+  35% {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* IMATGE PRINCIPAL */
+
+#project-modern-coven.is-open .coven-hero-image {
+  animation: covenImageReveal 2.6s ease-out both;
+}
+
+@keyframes covenImageReveal {
+  0%,
+  30% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* CATEGORIA I FRASE */
+
+#project-modern-coven.is-open .coven-category,
+#project-modern-coven.is-open .coven-intro-quote {
+  animation: covenTextReveal 2.6s ease-out both;
+}
+
+@keyframes covenTextReveal {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-modern-coven.is-open .coven-cover::after,
+  #project-modern-coven.is-open .coven-cover h1,
+  #project-modern-coven.is-open .coven-hero-image,
+  #project-modern-coven.is-open .coven-category,
+  #project-modern-coven.is-open .coven-intro-quote {
+    animation: none;
+  }
+
+  #project-modern-coven .coven-cover::after {
+    display: none;
+  }
+}
+
+/* ==========================================
+   THE MODERN COVEN — THREE ENERGIES
+========================================== */
+
+#project-modern-coven .coven-cover {
+  position: relative;
+  isolation: isolate;
+}
+
+/* CONTENIDOR INVISIBLE */
+
+/* CONTENIDOR TRANSPARENT — SENSE QUADRAT */
+
+#project-modern-coven .coven-energy {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+
+  overflow: visible;
+  pointer-events: none;
+
+  background: transparent;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* TRES LLUMS INDEPENDENTS */
+
+#project-modern-coven .coven-orb {
+  position: absolute;
+  width: 38vmin;
+  height: 38vmin;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(190, 115, 255, 0.85) 0%,
+    rgba(135, 65, 220, 0.45) 30%,
+    rgba(90, 30, 150, 0.12) 60%,
+    transparent 75%
+  );
+
+  filter: blur(18px);
+  mix-blend-mode: screen;
+}
+
+/* POSICIONS INICIALS */
+
+#project-modern-coven .coven-orb-one {
+  top: 5%;
+  left: -12%;
+}
+
+#project-modern-coven .coven-orb-two {
+  top: 15%;
+  right: -12%;
+}
+
+#project-modern-coven .coven-orb-three {
+  bottom: -10%;
+  left: 35%;
+}
+
+/* NUCLI CENTRAL */
+
+#project-modern-coven .coven-energy-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45vmin;
+  height: 45vmin;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(210, 150, 255, 0.75),
+    rgba(125, 55, 210, 0.35) 40%,
+    transparent 75%
+  );
+
+  filter: blur(25px);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.2);
+}
+
+/* ACTIVAR */
+
+#project-modern-coven.is-open .coven-orb-one {
+  animation: covenOrbOne 3.2s ease-in-out both;
+}
+
+#project-modern-coven.is-open .coven-orb-two {
+  animation: covenOrbTwo 3.2s ease-in-out both;
+}
+
+#project-modern-coven.is-open .coven-orb-three {
+  animation: covenOrbThree 3.2s ease-in-out both;
+}
+
+#project-modern-coven.is-open .coven-energy-core {
+  animation: covenCore 3.2s ease-in-out both;
+}
+
+/* VISIBILITAT GENERAL */
+
+@keyframes covenEnergyVisible {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* MOVIMENT DE LES TRES ENERGIES */
+
+@keyframes covenOrbOne {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    transform: translate(55vw, 30vh) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(55vw, 30vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes covenOrbTwo {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    transform: translate(-55vw, 25vh) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-55vw, 25vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes covenOrbThree {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(-35vh) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-35vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* FUSIÓ CENTRAL */
+
+@keyframes covenCore {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+
+  65% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+
+  85% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-modern-coven .coven-energy,
+  #project-modern-coven .coven-orb,
+  #project-modern-coven .coven-energy-core {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* LLUMS MÉS ORGÀNIQUES */
+
+#project-modern-coven .coven-orb,
+#project-modern-coven .coven-energy-core {
+  border-radius: 50%;
+  background-clip: padding-box;
+  pointer-events: none;
+}
+
+#project-modern-coven .coven-orb {
+  filter: blur(35px);
+}
+
+/* ==========================================
+   PROJECT 05 — FRAGILE MASCULINITY
+   BEHIND THE FACADE
+========================================== */
+
+/* PORTADA */
+
+#project-fragile .fragile-cover {
+  position: relative;
+  isolation: isolate;
+}
+
+/* CAPA DE TRANSICIÓ */
+
+#project-fragile .fragile-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background: linear-gradient(
+    110deg,
+    #c9c5c0 0%,
+    #8d8583 35%,
+    #463035 65%,
+    #817d83 100%
+  );
+}
+
+/* ACTIVAR EN OBRIR */
+
+#project-fragile.is-open .fragile-cover::before {
+  visibility: visible;
+  animation: fragileFacade 3s ease-in-out both;
+}
+
+@keyframes fragileFacade {
+  0% {
+    opacity: 0.95;
+  }
+
+  15% {
+    opacity: 0.85;
+  }
+
+  40% {
+    opacity: 0.65;
+  }
+
+  70% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* TÍTOL */
+
+#project-fragile.is-open .fragile-cover-heading h1 {
+  animation: fragileTitleReveal 2.3s ease-out both;
+}
+
+@keyframes fragileTitleReveal {
+  0%,
+  35% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FRASES */
+
+#project-fragile.is-open .fragile-cover-heading span,
+#project-fragile.is-open .fragile-cover-heading p {
+  animation: fragileTextReveal 2.3s ease-out both;
+}
+
+@keyframes fragileTextReveal {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOTOGRAFIES */
+
+#project-fragile.is-open .fragile-cover-grid img {
+  animation: fragileImageReveal 3s ease-in-out both;
+}
+
+@keyframes fragileImageReveal {
+  0%,
+  35% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-fragile.is-open .fragile-cover::before,
+  #project-fragile.is-open .fragile-cover-heading h1,
+  #project-fragile.is-open .fragile-cover-heading span,
+  #project-fragile.is-open .fragile-cover-heading p,
+  #project-fragile.is-open .fragile-cover-grid img {
+    animation: none;
+  }
+
+  #project-fragile .fragile-cover::before {
+    display: none;
+  }
+}
+
+/* ==========================================
+   PROJECT 06 — THE FASHION INDUSTRY
+   BEHIND PERFECTION
+========================================== */
+
+/* PORTADA */
+
+#project-fashion .fashion-cover {
+  position: relative;
+  isolation: isolate;
+}
+
+/* FAÇANA EDITORIAL */
+
+#project-fashion .fashion-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+
+  background: #e8e5e0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ACTIVACIÓ */
+
+#project-fashion.is-open .fashion-cover::before {
+  visibility: visible;
+  animation: fashionFacade 2.5s ease-in-out both;
+}
+
+/* DISTORSIÓ DE LA FAÇANA */
+
+@keyframes fashionFacade {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  40% {
+    opacity: 0.95;
+    transform: translateX(-5px);
+  }
+
+  48% {
+    opacity: 0.85;
+    transform: translateX(4px);
+  }
+
+  56% {
+    opacity: 0.75;
+    transform: translateX(-2px);
+  }
+
+  70% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0);
+  }
+}
+
+/* TÍTOL */
+
+#project-fashion.is-open .fashion-cover h1 {
+  animation: fashionTitleReveal 2.5s ease-out both;
+}
+
+@keyframes fashionTitleReveal {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TEXTOS */
+
+#project-fashion.is-open .fashion-eyebrow,
+#project-fashion.is-open .fashion-subtitle {
+  animation: fashionTextReveal 2.5s ease-out both;
+}
+
+@keyframes fashionTextReveal {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOTOGRAFIA EDITORIAL */
+
+#project-fashion.is-open .fashion-cover-collage {
+  animation: fashionImageReveal 2.5s ease-out both;
+}
+
+@keyframes fashionImageReveal {
+  0%,
+  35% {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* PETITA DISTORSIÓ EDITORIAL */
+
+#project-fashion.is-open .fashion-cover-value {
+  animation: fashionValueReveal 2.5s ease-out both;
+}
+
+@keyframes fashionValueReveal {
+  0%,
+  55% {
+    opacity: 0;
+    letter-spacing: 0.3em;
+  }
+
+  100% {
+    opacity: 1;
+    letter-spacing: normal;
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-fashion.is-open .fashion-cover::before,
+  #project-fashion.is-open .fashion-cover h1,
+  #project-fashion.is-open .fashion-eyebrow,
+  #project-fashion.is-open .fashion-subtitle,
+  #project-fashion.is-open .fashion-cover-collage,
+  #project-fashion.is-open .fashion-cover-value {
+    animation: none;
+  }
+
+  #project-fashion .fashion-cover::before {
+    display: none;
+  }
+}
+
+/* ==========================================
+   PROJECT 07 — APE STUDIOS
+   THE STUDIO FLASH
+========================================== */
+
+/* PREPARACIÓ DE LA PORTADA */
+
+#project-ape .ape-cover {
+  position: relative;
+}
+
+/* LES TRES FOTOGRAFIES */
+
+#project-ape .ape-cover-grid img {
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+/* ENTRADA SEQÜENCIAL */
+
+#project-ape.is-open .ape-cover-grid img:nth-child(1) {
+  animation: apePhotoReveal 0.75s ease-out 0.15s both;
+}
+
+#project-ape.is-open .ape-cover-grid img:nth-child(2) {
+  animation: apePhotoReveal 0.75s ease-out 0.45s both;
+}
+
+#project-ape.is-open .ape-cover-grid img:nth-child(3) {
+  animation: apePhotoReveal 0.75s ease-out 0.75s both;
+}
+
+/* REVELACIÓ FOTOGRÀFICA */
+
+@keyframes apePhotoReveal {
+  0% {
+    opacity: 0;
+    filter: brightness(2.2);
+    transform: scale(1.025);
+  }
+
+  20% {
+    opacity: 0.85;
+    filter: brightness(1.65);
+  }
+
+  55% {
+    opacity: 1;
+    filter: brightness(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* TÍTOL */
+
+#project-ape.is-open .ape-cover-heading h1 {
+  animation: apeTitleReveal 1.5s ease-out 0.5s both;
+}
+
+@keyframes apeTitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SUBTÍTOL */
+
+#project-ape.is-open .ape-cover-heading p {
+  animation: apeTextReveal 1.5s ease-out 0.75s both;
+}
+
+@keyframes apeTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* EXPLORE MORE */
+
+#project-ape.is-open .ape-explore {
+  animation: apeTextReveal 1.2s ease-out 1.1s both;
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-ape.is-open .ape-cover-grid img,
+  #project-ape.is-open .ape-cover-heading h1,
+  #project-ape.is-open .ape-cover-heading p,
+  #project-ape.is-open .ape-explore {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   FRAGMENTS OF SUMMER
+   ENTRADA — BORN FROM THE SUN
+========================================== */
+
+#project-summer .summer-image-wrap {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+/* FOTOGRAFIA */
+
+#project-summer .summer-cover-image {
+  display: block;
+  width: 100%;
+}
+
+/* LLUM INICIAL DEL SOL */
+
+#project-summer .summer-sunlight {
+  position: absolute;
+  left: 52%;
+  top: 65%;
+  width: 35%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 235, 1) 0%,
+    rgba(255, 228, 155, 0.9) 12%,
+    rgba(255, 190, 100, 0.45) 38%,
+    transparent 72%
+  );
+
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.1);
+}
+
+/* ENTRADA DE LA FOTOGRAFIA */
+
+#project-summer.is-open .summer-cover-image {
+  animation: summerPhotoEntrance 2.4s ease-out both;
+}
+
+@keyframes summerPhotoEntrance {
+  0%,
+  15% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 0.4;
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* EXPANSIÓ DE LA LLUM */
+
+#project-summer.is-open .summer-sunlight {
+  animation: summerSunEntrance 2.4s ease-out both;
+}
+
+@keyframes summerSunEntrance {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+
+  75% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-summer.is-open .summer-cover-image {
+    animation: none;
+  }
+
+  #project-summer .summer-sunlight {
+    display: none;
+  }
+}
+
+/* ==========================================
+   PROJECT 09 — AN INNER WORLD
+   EMOTIONS IN MOTION
+========================================== */
+
+/* CAPA TRANSPARENT A PANTALLA COMPLETA */
+
+#project-painting .painting-transition {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+  opacity: 0;
+}
+
+/* FORMES ORGÀNIQUES */
+
+#project-painting .painting-stroke {
+  position: absolute;
+  width: 48vmax;
+  height: 18vmax;
+  border-radius: 65% 35% 70% 30% / 45% 65% 35% 55%;
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* TURQUESA */
+
+#project-painting .painting-stroke-one {
+  top: 20%;
+  left: -20%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(24, 180, 184, 0.85) 0%,
+    rgba(31, 155, 157, 0.55) 45%,
+    transparent 75%
+  );
+
+  transform: rotate(-25deg) scale(0.3);
+}
+
+/* VERD */
+
+#project-painting .painting-stroke-two {
+  top: 48%;
+  right: -25%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(48, 145, 75, 0.85) 0%,
+    rgba(68, 169, 93, 0.5) 45%,
+    transparent 75%
+  );
+
+  transform: rotate(30deg) scale(0.3);
+}
+
+/* TARONJA */
+
+#project-painting .painting-stroke-three {
+  bottom: 5%;
+  left: 25%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(220, 113, 42, 0.8) 0%,
+    rgba(191, 91, 36, 0.45) 45%,
+    transparent 75%
+  );
+
+  transform: rotate(-15deg) scale(0.3);
+}
+
+/* ACTIVACIÓ */
+
+#project-painting.is-open .painting-transition {
+  animation: paintingTransitionVisible 2.5s both;
+}
+
+#project-painting.is-open .painting-stroke-one {
+  animation: paintingStrokeOne 2.5s ease-in-out both;
+}
+
+#project-painting.is-open .painting-stroke-two {
+  animation: paintingStrokeTwo 2.5s ease-in-out both;
+}
+
+#project-painting.is-open .painting-stroke-three {
+  animation: paintingStrokeThree 2.5s ease-in-out both;
+}
+
+/* CONTENIDOR */
+
+@keyframes paintingTransitionVisible {
+  0% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* PINZELLADA 01 */
+
+@keyframes paintingStrokeOne {
+  0% {
+    opacity: 0;
+    transform: translateX(-15vw) rotate(-25deg) scale(0.3);
+  }
+
+  25% {
+    opacity: 0.9;
+    transform: translateX(15vw) rotate(-15deg) scale(1);
+  }
+
+  65% {
+    opacity: 0.75;
+    transform: translateX(45vw) rotate(10deg) scale(1.3);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(60vw) rotate(20deg) scale(1.5);
+  }
+}
+
+/* PINZELLADA 02 */
+
+@keyframes paintingStrokeTwo {
+  0%,
+  15% {
+    opacity: 0;
+    transform: translateX(15vw) rotate(30deg) scale(0.3);
+  }
+
+  40% {
+    opacity: 0.85;
+    transform: translateX(-20vw) rotate(15deg) scale(1);
+  }
+
+  70% {
+    opacity: 0.7;
+    transform: translateX(-45vw) rotate(-10deg) scale(1.3);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-60vw) rotate(-20deg) scale(1.5);
+  }
+}
+
+/* PINZELLADA 03 */
+
+@keyframes paintingStrokeThree {
+  0%,
+  30% {
+    opacity: 0;
+    transform: translateY(20vh) rotate(-15deg) scale(0.3);
+  }
+
+  55% {
+    opacity: 0.8;
+    transform: translateY(-10vh) rotate(0deg) scale(1);
+  }
+
+  75% {
+    opacity: 0.6;
+    transform: translateY(-20vh) rotate(15deg) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30vh) rotate(25deg) scale(1.4);
+  }
+}
+
+/* REVELACIÓ DE LES PINTURES */
+
+#project-painting.is-open .painting-gallery {
+  animation: paintingGalleryReveal 2.5s ease-out both;
+}
+
+@keyframes paintingGalleryReveal {
+  0%,
+  25% {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* REVELACIÓ DEL TÍTOL */
+
+#project-painting.is-open .painting-heading {
+  animation: paintingHeadingReveal 2.5s ease-out both;
+}
+
+@keyframes paintingHeadingReveal {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ACCESSIBILITAT */
+
+@media (prefers-reduced-motion: reduce) {
+  #project-painting .painting-transition {
+    display: none;
+  }
+
+  #project-painting.is-open .painting-gallery,
+  #project-painting.is-open .painting-heading {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   GLOBAL — EXPLORE MORE
+   SOFT IMMERSION
+========================================== */
+
+.project-overlay .project-page,
+.laberint-overlay,
+.coven-overlay,
+.fragile-overlay,
+.fashion-overlay,
+.ape-overlay,
+.summer-overlay,
+.painting-overlay,
+.raw-overlay {
+  scroll-behavior: smooth;
+}
+
+/* Revelació subtil de les seccions interiors */
+
+.project-overlay .sublime-chapter,
+.laberint-overlay .laberint-journey > section,
+.coven-overlay .coven-journey > section,
+.fragile-overlay .fragile-journey > section,
+.fashion-overlay .fashion-journey > section,
+.ape-overlay .ape-journey > section,
+.summer-overlay .summer-journey > section {
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Accessibilitat */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-overlay .project-page,
+  .laberint-overlay,
+  .coven-overlay,
+  .fragile-overlay,
+  .fashion-overlay,
+  .ape-overlay,
+  .summer-overlay,
+  .painting-overlay,
+  .raw-overlay {
+    scroll-behavior: auto;
+  }
+}
+
+/* SOFT IMMERSION — ESTAT INICIAL */
+
+.sublime-chapter:not(.soft-visible),
+.laberint-journey > section:not(.soft-visible),
+.coven-journey > section:not(.soft-visible),
+.fragile-journey > section:not(.soft-visible),
+.fashion-journey > section:not(.soft-visible),
+.ape-journey > section:not(.soft-visible),
+.summer-journey > section:not(.soft-visible) {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* ESTAT VISIBLE */
+
+.soft-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soft-visible,
+  .sublime-chapter,
+  .laberint-journey > section,
+  .coven-journey > section,
+  .fragile-journey > section,
+  .fashion-journey > section,
+  .ape-journey > section,
+  .summer-journey > section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================
+   RAW? + APE STUDIOS
+   EXPLORE MORE — SMOOTH TRANSITION
+========================================== */
+
+#project-raw,
+#project-ape {
+  scroll-behavior: smooth;
+}
+
+/* RAW? — REVELACIÓ DE LA REVISTA */
+
+#project-raw .raw-manifesto {
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* APE STUDIOS — REVELACIÓ DEL CONTINGUT */
+
+#project-ape .ape-journey {
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================
+   APE STUDIOS — SOFT IMMERSION
+========================================== */
+
+#project-ape .ape-light {
+  opacity: 0;
+  translate: 0 22px;
+
+  transition:
+    opacity 1.1s ease,
+    translate 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#project-ape .ape-light.ape-soft-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-ape .ape-light {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
+
+/* ==========================================
+   RAW? — EXPLORE MORE
+   SOFT IMMERSION
+========================================== */
+
+#project-raw #raw-manifesto {
+  opacity: 0;
+  translate: 0 22px;
+
+  transition:
+    opacity 1.1s ease,
+    translate 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#project-raw #raw-manifesto.raw-soft-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-raw #raw-manifesto {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
+
+/* ==========================================
+   ABOUT + CONTACT — BACK TO HOME
+========================================== */
+
+#about,
+#contact {
+  position: relative;
+}
+
+#about > .back-to-home,
+#contact > .back-to-home {
+  position: absolute;
+  top: 28px;
+  right: 5%;
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 8px 0;
+
+  color: #292321;
+  background: transparent;
+  border: 0;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#about > .back-to-home:hover,
+#contact > .back-to-home:hover {
+  opacity: 0.5;
+}
+
+#about > .back-to-home:focus-visible,
+#contact > .back-to-home:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+/* ==========================================
+   CONTACT — BACK TO HOME
+========================================== */
+
+#contact .contact-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+#contact .contact-top .back-to-home {
+  position: static;
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  color: #292321;
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#contact .contact-top .back-to-home:hover {
+  opacity: 0.5;
+}
+
+#contact .contact-top .back-to-home:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+/* ==========================================
+   EL LABERINT — ZOOM FOTO 01
+   SENSE SORTIR DEL REQUADRE
+========================================== */
+
+/* Contenidor de la primera fotografia */
+
+#project-laberint .laberint-symbol-zoom {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+/* Només ampliem la fotografia interior */
+
+#project-laberint .laberint-symbol-zoom img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1.35);
+  transform-origin: center;
+}
+
+/* ==========================================
+   POEMA — BACK TO HOME
+========================================== */
+
+#work .poem-back-home {
+  position: absolute;
+  top: 35px;
+  right: 5%;
+  z-index: 20;
+
+  display: inline-block;
+  margin: 0;
+  padding: 8px 0;
+
+  color: #f5f0eb;
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#work .poem-back-home:hover {
+  opacity: 0.6;
+}
+
+#work .poem-back-home:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+/* ==========================================
+   CLAUDINE — MOBILE / PAS 1: HOME + NAVBAR
+   No modifica el disseny desktop.
+========================================== */
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+    padding: 16px 16px 32px;
+    gap: 18px;
+    justify-content: flex-start;
+  }
+  .navbar {
+    position: relative;
+    z-index: 30;
+    flex: 0 0 56px;
+    min-height: 56px;
+  }
+  .navbar .logo {
+    font-size: 16px;
+  }
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 0 8px 12px;
+    border: 0;
+    background: transparent;
+    color: #29231f;
+    font:
+      500 12px "Inter",
+      Arial,
+      sans-serif;
+    cursor: pointer;
+  }
+  .navbar nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    width: min(250px, 85vw);
+    padding: 18px 20px;
+    flex-direction: column;
+    gap: 0;
+    background: #e9dfd7;
+    border: 1px solid #a99b91;
+    box-shadow: 0 12px 24px rgba(41, 35, 31, 0.08);
+  }
+  .navbar nav.is-mobile-open {
+    display: flex;
+  }
+  .navbar nav a {
+    display: block;
+    padding: 12px 0;
+    font-size: 12px;
+  }
+  .hero-image {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+    height: min(55svh, 480px);
+    aspect-ratio: auto;
+    overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .hero-bottom {
+    width: 100%;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+    padding-top: 12px;
+  }
+  .hero-info h1 {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+  .hero-info p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .explore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 360px) {
+  .hero-image {
+    height: 48svh;
+  }
+  .hero-bottom {
+    gap: 14px;
+  }
+}
+
+/* CLAUDINE MOBILE PAS 2 — GALERIA INDIVIDUAL
+   Només mòbil: desktop intacte. */
+@media (max-width: 700px) {
+  .gallery-horizontal {
+    height: 100svh;
+    min-height: 0;
+  }
+  .gallery-scroll {
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+  }
+  .gallery-track {
+    width: max-content;
+    min-width: 100%;
+    height: 100%;
+  }
+  .gallery-panel,
+  .gallery-grid {
+    display: contents;
+  }
+  .gallery-card {
+    box-sizing: border-box;
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100%;
+    padding: 0 26px;
+    justify-content: center;
+    gap: 18px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    font-size: 12px;
+  }
+  .gallery-image {
+    width: min(100%, 340px);
+    aspect-ratio: 3 / 4;
+    max-height: 53svh;
+    border-radius: 20px;
+  }
+  .gallery-card > span {
+    opacity: 1;
+    transform: none;
+    color: var(--gallery-text);
+  }
+  .gallery-card:hover .gallery-image,
+  .gallery-card:focus-visible .gallery-image {
+    transform: none;
+  }
+  /* Fons reals: no sobreescriure fons2 ni fons3. */
+  .gallery-horizontal {
+    background: #080808 url("imatges/fons1.png") center center / cover no-repeat;
+  }
+  .gallery-backdrop-grey {
+    background-image: url("imatges/fons2.png");
+    background-blend-mode: normal;
+  }
+  .gallery-backdrop-ivory {
+    background-image: url("imatges/fons3.png");
+    background-blend-mode: normal;
+  }
+}
+
+/* RECUPERAR LA FLOR DEL POEMA */
+
+.intro {
+  position: relative;
+  min-height: 100svh;
+  background: transparent;
+  overflow: hidden;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 65%;
+  background-image: url("imatges/flor.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* MÒBIL */
+@media (max-width: 700px) {
+  .intro::before {
+    top: 0;
+    left: 0;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .intro-content {
+    z-index: 2;
+  }
+}
+
+/* POSICIONS FINALS DEL POEMA — MÒBIL */
+@media (max-width: 700px) {
+  /* BACK TO HOME A DALT A L'ESQUERRA */
+  .intro .poem-back-home {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    right: auto;
+    z-index: 10;
+  }
+
+  /* PUJAR EL POEMA */
+  .intro .intro-content {
+    position: relative;
+    top: -200px;
+  }
+}
+
+/* RAW — VÍDEO SENSE ZOOM A MÒBIL */
+@media (max-width: 700px) {
+  #project-raw .raw-video {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+/* EL LABERINT — EXPLORE MORE MÉS AVALL */
+@media (max-width: 700px) {
+  #project-laberint .laberint-scroll-hint {
+    position: relative;
+    top: 70px;
+  }
+}
+
+/* EL LABERINT — THE SYMBOLS MÒBIL */
+@media (max-width: 700px) {
+  #project-laberint .laberint-symbols-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #project-laberint .laberint-symbols-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #project-laberint .laberint-symbol-zoom {
+    min-width: 0;
+    overflow: hidden;
+  }
+}
+
+/* FRAGMENTS OF SUMMER — PORTADA MÒBIL */
+@media (max-width: 700px) {
+  #project-summer .summer-cover-image {
+    object-position: 75% 55%;
+  }
+}
+
+/* AN INNER WORLD — BALLARINA MÒBIL */
+@media (max-width: 700px) {
+  #project-painting .painting-image:last-child {
+    height: 520px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  #project-painting .painting-image:last-child img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.35) translateY(-6%);
+    transform-origin: center center;
+    border-radius: 0;
+  }
+}

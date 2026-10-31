@@ -1,0 +1,1472 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CLAUDINE — Art Direction & Photography</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- =========================
+       01 — PORTADA
+  ========================== -->
+
+      <section class="hero" id="home">
+        <header class="navbar">
+          <a href="#home" class="logo">CLAUDINE</a>
+
+          <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Obrir menú">MENU ☰</button>
+          <nav id="mobile-navigation" aria-label="Navegació principal">
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
+        </header>
+
+        <div class="hero-image">
+          <img
+            src="imatges/DSCF1918.jpg"
+            alt="Retrat artístic amb roses blanques"
+          />
+        </div>
+
+        <div class="hero-bottom">
+          <div class="hero-info">
+            <h1>CLAUDINE</h1>
+            <p>Art Direction / Photography / Mixed Media</p>
+          </div>
+
+          <a href="#work" class="explore-btn" id="explore-btn">
+            EXPLORE WORK ↗
+          </a>
+        </div>
+      </section>
+
+      <!-- =========================
+     02 — FONS COMPARTIT
+     POEMA + GALERIA
+========================== -->
+
+      <div class="work-background">
+        <!-- INTRODUCCIÓ POÈTICA -->
+
+        <section class="intro" id="work">
+          <!-- TORNAR A LA PORTADA -->
+
+          <a href="index.html" class="poem-back-home"> ← BACK TO HOME </a>
+
+          <div class="intro-content">
+            <h2>Between softness and darkness.</h2>
+
+            <p class="intro-poem">
+              Not everything beautiful is untouched.<br />
+              Not everything broken is lost.<br />
+              Somewhere between light and shadow,<br />
+              something begins to bloom.
+            </p>
+          </div>
+        </section>
+
+        <!-- =========================
+         03 — GALERIA HORITZONTAL
+    ========================== -->
+
+        <section class="gallery-horizontal" id="gallery">
+          <!-- FONS GRIS I BLANC ROSAT -->
+          <!-- No es mouen amb les targetes -->
+
+          <div class="gallery-backdrops" aria-hidden="true">
+            <div class="gallery-backdrop gallery-backdrop-grey"></div>
+            <div class="gallery-backdrop gallery-backdrop-ivory"></div>
+          </div>
+
+          <!-- TÍTOL FIX -->
+
+          <header class="gallery-header">
+            <span>CLAUDINE</span>
+            <h2>GALLERY</h2>
+          </header>
+
+          <!-- CONTENIDOR AMB SCROLL HORITZONTAL -->
+
+          <div class="gallery-scroll" id="galleryScroll">
+            <div class="gallery-track">
+              <!-- =========================
+               GALERIA 01 — NEGRE
+          ========================== -->
+
+              <div class="gallery-panel gallery-black">
+                <div class="gallery-grid">
+                  <!-- RAW? -->
+                  <a href="#raw" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/ull.jpg"
+                        alt="Ull"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/RAW1.JPG"
+                        alt="RAW?"
+                      />
+                    </div>
+                    <span>01 / RAW?</span>
+                  </a>
+
+                  <!-- LE SUBLIME -->
+                  <a href="#sublime" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/papallona.jpg"
+                        alt="Papallona"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/le sublime.jpg"
+                        alt="Le Sublime et le Blessé"
+                      />
+                    </div>
+                    <span>02 / LE SUBLIME BLESSÉ</span>
+                  </a>
+
+                  <!-- EL LABERINT -->
+                  <a href="#laberint" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/rellotge.jpg"
+                        alt="Rellotge"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/laberint 1.PNG"
+                        alt="El Laberint"
+                      />
+                    </div>
+                    <span>03 / EL LABERINT</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- =========================
+               GALERIA 02 — GRIS
+          ========================== -->
+
+              <div class="gallery-panel gallery-grey">
+                <div class="gallery-grid">
+                  <!-- MODERN COVEN -->
+                  <a href="#modern-coven" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/modern-symbols.jpg"
+                        alt="Símbol Modern Coven"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/modern-symbol.jpg"
+                        alt="The Modern Coven of Light"
+                      />
+                    </div>
+                    <span>04 / THE MODERN COVEN OF LIGHT</span>
+                  </a>
+
+                  <!-- FRAGILE MASCULINITY -->
+                  <a href="#fragile" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/fragile-symbols.jpg"
+                        alt="Símbol Fragile Masculinity"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/fragile-symbol.jpg"
+                        alt="Fragile Masculinity"
+                      />
+                    </div>
+                    <span>05 / FRAGILE MASCULINITY</span>
+                  </a>
+
+                  <!-- FASHION INDUSTRY -->
+                  <a href="#fashion" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/fashion-symbols.jpg"
+                        alt="Símbol Fashion Industry"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/fashion-symbol.jpg"
+                        alt="The Fashion Industry"
+                      />
+                    </div>
+                    <span>06 / THE FASHION INDUSTRY</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- =========================
+               GALERIA 03 — BLANC ROSAT
+          ========================== -->
+
+              <div class="gallery-panel gallery-ivory">
+                <div class="gallery-grid">
+                  <!-- APE STUDIOS -->
+                  <a href="#ape" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/ape-symbols.jpg"
+                        alt="Símbol APE Studios"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/ape-symbol.jpg"
+                        alt="APE Studios"
+                      />
+                    </div>
+                    <span>07 / APE STUDIOS</span>
+                  </a>
+
+                  <!-- FRAGMENTS OF SUMMER -->
+                  <a href="#summer" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/summer-symbols.jpg"
+                        alt="Símbol Fragments of Summer"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/summer-symbol.jpg"
+                        alt="Fragments of Summer"
+                      />
+                    </div>
+                    <span>08 / FRAGMENTS OF SUMMER</span>
+                  </a>
+
+                  <!-- AN INNER WORLD -->
+                  <a href="#painting" class="gallery-card">
+                    <div class="gallery-image">
+                      <img
+                        class="symbol-image"
+                        src="imatges/painting-symbols.jpg"
+                        alt="Símbol An Inner World"
+                      />
+                      <img
+                        class="project-image"
+                        src="imatges/painting-symbol.jpg"
+                        alt="An Inner World"
+                      />
+                    </div>
+                    <span>09 / AN INNER WORLD</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NAVEGACIÓ CAP A ABOUT ME -->
+          <a href="#about" class="gallery-about-link">
+            ABOUT ME
+            <span aria-hidden="true">↓</span>
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <!-- LE SUBLIME ET LE BLESSÉ — PROJECT OVERLAY -->
+
+    <div
+      class="project-overlay"
+      id="project-sublime"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sublime-title"
+      aria-hidden="true"
+    >
+      <div class="project-page">
+        <header class="project-navbar">
+          <span>CLAUDINE / 02</span>
+
+          <button
+            class="project-close"
+            type="button"
+            aria-label="Tancar el projecte"
+          >
+            CLOSE ×
+          </button>
+        </header>
+
+        <section class="sublime-hero">
+          <p class="project-category">PHOTOGRAPHY / ART DIRECTION</p>
+
+          <h1 id="sublime-title">Le Sublime et le Blessé</h1>
+
+          <p class="project-quote">Vulnerability in a Hostile Environment.</p>
+
+          <img
+            src="imatges/le sublime.jpg"
+            alt="Le Sublime et le Blessé"
+            class="sublime-cover"
+          />
+
+          <button
+            class="sublime-explore"
+            type="button"
+            aria-controls="sublime-more"
+            aria-expanded="false"
+          >
+            EXPLORE MORE ↓
+          </button>
+        </section>
+
+        <!-- SEGONA PART: LE SUBLIME -->
+
+        <div class="sublime-more" id="sublime-more">
+          <!-- FOTOGRAFIA 02 -->
+          <section class="sublime-chapter sublime-chapter-two">
+            <div class="sublime-photo-wrap">
+              <img
+                src="imatges/sublime02.jpg"
+                alt="Vulnerability — Le Sublime"
+                class="sublime-photo"
+              />
+              <span class="sublime-photo-label"> FOTOGRAFIA 02 </span>
+            </div>
+
+            <div class="sublime-chapter-text">
+              <span>02 / VULNERABILITY</span>
+
+              <h2>To feel deeply is to remain human.</h2>
+
+              <p>Fragility / Intimacy / Silence</p>
+            </div>
+          </section>
+
+          <!-- FOTOGRAFIA 03 -->
+          <section class="sublime-chapter sublime-chapter-three">
+            <div class="sublime-photo-wrap">
+              <img
+                src="imatges/sublime03.jpg"
+                alt="Fotografia final de Le Sublime"
+                class="sublime-photo"
+              />
+              <span class="sublime-photo-label"> FOTOGRAFIA 03 </span>
+            </div>
+
+            <div class="sublime-ending">
+              <h2>
+                Why must softness survive in a world that celebrates cruelty?
+              </h2>
+
+              <p class="sublime-end-button">END OF PROJECT</p>
+
+              <nav
+                class="sublime-bottom-nav"
+                aria-label="Navegació del projecte"
+              >
+                <button class="sublime-back" type="button">
+                  ← BACK TO GALLERY
+                </button>
+
+                <button class="sublime-next" type="button">
+                  NEXT PROJECT →
+                </button>
+              </nav>
+            </div>
+
+            <!-- TRANSICIÓ THE WOUND REVEAL -->
+            <div class="sublime-wound-transition" aria-hidden="true">
+              <div class="wound-left"></div>
+              <div class="wound-right"></div>
+              <div class="wound-crack"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTE 03 — EL LABERINT -->
+
+    <section
+      class="laberint-overlay"
+      id="project-laberint"
+      aria-hidden="true"
+      aria-label="Projecte El Laberint"
+    >
+      <header class="laberint-navbar">
+        <span>CLAUDINE / 03</span>
+        <button class="laberint-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="laberint-content">
+        <!-- PORTADA -->
+        <div class="laberint-cover">
+          <span class="laberint-category">
+            A SHORT FILM ABOUT LOSS AND MEMORY
+          </span>
+
+          <h1>EL LABERINT</h1>
+
+          <div class="laberint-video">
+            <iframe
+              id="laberint-player"
+              data-src="https://www.youtube-nocookie.com/embed/561nf1G8VxE?rel=0"
+              title="EL LABERINT — Short Film"
+              allow="
+                accelerometer;
+                autoplay;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                fullscreen;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <button
+            class="laberint-scroll-hint"
+            id="laberint-explore"
+            type="button"
+          >
+            EXPLORE MORE ↓
+          </button>
+        </div>
+
+        <!-- RECORREGUT -->
+        <div class="laberint-journey" id="laberint-journey">
+          <section class="laberint-quote">
+            <p>Sometimes, getting lost is the only way to find ourselves.</p>
+          </section>
+
+          <!-- THE SYMBOLS -->
+          <section class="laberint-symbols">
+            <h2>02 — THE SYMBOLS</h2>
+
+            <div class="laberint-symbols-grid">
+              <div class="laberint-symbol-zoom">
+                <img src="imatges/laberint-symbol-01.jpg" alt="Símbol 01" />
+              </div>
+
+              <img src="imatges/laberint-symbol-02.jpg" alt="Símbol 02" />
+              <img src="imatges/laberint-symbol-03.jpg" alt="Símbol 03" />
+            </div>
+          </section>
+
+          <!-- BEHIND THE DREAM -->
+          <section class="laberint-behind">
+            <h2>03 — BEHIND THE DREAM</h2>
+
+            <div class="laberint-behind-grid">
+              <img src="imatges/laberint-behind-01.jpg" alt="Rodatge 01" />
+              <img src="imatges/laberint-behind-02.jpg" alt="Rodatge 02" />
+              <img src="imatges/laberint-behind-03.jpg" alt="Rodatge 03" />
+              <img src="imatges/laberint-behind-04.jpg" alt="Rodatge 04" />
+            </div>
+          </section>
+
+          <!-- FINAL -->
+          <footer class="laberint-ending">
+            <button class="laberint-end-button" type="button">
+              END OF PROJECT
+            </button>
+
+            <nav class="laberint-bottom-nav">
+              <button class="laberint-back" type="button">
+                ← BACK TO GALLERY
+              </button>
+
+              <button class="laberint-next" type="button">
+                NEXT PROJECT →
+              </button>
+            </nav>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+     04 — THE MODERN COVEN OF LIGHT
+===================================== -->
+
+    <section
+      id="project-modern-coven"
+      class="coven-overlay"
+      aria-hidden="true"
+      aria-label="The Modern Coven of Light"
+    >
+      <!-- NAVEGACIÓ FIXA -->
+      <header class="coven-navbar">
+        <span>CLAUDINE / 04</span>
+
+        <button class="coven-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="coven-content">
+        <!-- 01 — PORTADA -->
+        <section class="coven-cover">
+          <!-- THE AWAKENING — ENERGIES LILES -->
+
+          <div class="coven-energy" aria-hidden="true">
+            <span class="coven-orb coven-orb-one"></span>
+            <span class="coven-orb coven-orb-two"></span>
+            <span class="coven-orb coven-orb-three"></span>
+            <span class="coven-energy-core"></span>
+          </div>
+
+          <span class="coven-category"> ART DIRECTION & PHOTOGRAPHY </span>
+
+          <h1>The Modern Coven of Light</h1>
+
+          <div class="coven-hero-image">
+            <img
+              src="imatges/coven-moon.jpg"
+              alt="Silueta femenina davant una lluna violeta"
+            />
+          </div>
+
+          <p class="coven-intro-quote">
+            To create life is power, not submission.
+          </p>
+
+          <button id="coven-explore" class="coven-explore" type="button">
+            EXPLORE MORE ↓
+          </button>
+        </section>
+
+        <!-- CONTINGUT BLOQUEJAT FINS AL CLIC -->
+        <div class="coven-journey" id="coven-journey">
+          <!-- 02 — RITUALS -->
+          <section class="coven-chapter coven-rituals">
+            <div class="coven-chapter-heading">
+              <span>02 / RITUALS</span>
+            </div>
+
+            <div class="coven-ritual-layout">
+              <img
+                src="imatges/coven-ritual-01.jpg"
+                alt="Ritual amb espelmes"
+              />
+
+              <div class="coven-ritual-right">
+                <div class="coven-chapter-text">
+                  <span>RITUAL / TRANSFORMATION</span>
+                  <h2>
+                    They called it witchcraft because they feared her knowledge.
+                  </h2>
+                  <p>Ritual / Intuition / Transformation</p>
+                </div>
+
+                <img
+                  src="imatges/coven-ritual-02.jpg"
+                  alt="Detall d'un ritual violeta"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- 03 — THE INNER EYE -->
+          <section class="coven-chapter coven-beauty">
+            <div class="coven-chapter-heading">
+              <span>03 / THE INNER EYE</span>
+            </div>
+
+            <img
+              src="imatges/coven-eye.jpg"
+              alt="Ull il·luminat amb llum violeta"
+            />
+
+            <div class="coven-centered-text">
+              <h2>What they called madness was intuition all along.</h2>
+              <p>Intuition / Vision / Freedom</p>
+            </div>
+          </section>
+
+          <!-- 04 — THE SYMBOL -->
+          <section class="coven-chapter coven-familiar">
+            <div class="coven-chapter-heading">
+              <span>04 / THE SYMBOL</span>
+            </div>
+
+            <div class="coven-familiar-grid">
+              <img src="imatges/coven-cat-01.jpg" alt="Gat sota llum violeta" />
+
+              <img src="imatges/coven-cat-02.jpg" alt="Segon retrat de gat" />
+            </div>
+
+            <div class="coven-centered-text">
+              <h2>Some creatures were never meant to be tamed.</h2>
+              <p>Intuition / Independence / Feminine Power</p>
+            </div>
+          </section>
+
+          <!-- 05 — THE KNOWLEDGE -->
+          <section class="coven-chapter coven-knowledge">
+            <div class="coven-chapter-heading">
+              <span>05 / THE KNOWLEDGE</span>
+            </div>
+
+            <div class="coven-knowledge-layout">
+              <img
+                src="imatges/coven-library.jpg"
+                alt="Biblioteca amb llum violeta"
+              />
+
+              <div class="coven-knowledge-right">
+                <div class="coven-chapter-text">
+                  <h2>Knowledge is a form of magic.</h2>
+                </div>
+
+                <img
+                  src="imatges/coven-detail.jpg"
+                  alt="Detall de flors i objectes"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- 06 — FINAL -->
+          <section class="coven-chapter coven-final">
+            <div class="coven-chapter-heading">
+              <span>06 / THE INNER LIGHT</span>
+            </div>
+
+            <img
+              src="imatges/coven-final.jpg"
+              alt="Retrat femení amb llum violeta"
+            />
+
+            <h2>We were never meant to remain in the shadows.</h2>
+
+            <!-- END OF PROJECT — CENTRAT -->
+
+            <p class="coven-end-button">END OF PROJECT</p>
+
+            <!-- NAVEGACIÓ INFERIOR -->
+
+            <nav class="coven-bottom-nav" aria-label="Navegació del projecte">
+              <button class="coven-back" type="button">
+                ← BACK TO GALLERY
+              </button>
+
+              <button class="coven-next" type="button">NEXT PROJECT →</button>
+            </nav>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+     05 — FRAGILE MASCULINITY
+========================================= -->
+
+    <section
+      id="project-fragile"
+      class="fragile-overlay is-locked"
+      aria-hidden="true"
+      aria-label="Fragile Masculinity"
+    >
+      <!-- NAVEGACIÓ FIXA -->
+      <header class="fragile-navbar">
+        <span>CLAUDINE / 05</span>
+
+        <button
+          class="fragile-close"
+          type="button"
+          aria-label="Tancar Fragile Masculinity"
+        >
+          CLOSE ×
+        </button>
+      </header>
+
+      <!-- 01 — PORTADA -->
+      <section class="fragile-cover">
+        <div class="fragile-cover-heading">
+          <span>AN EXPLORATION OF VULNERABILITY</span>
+          <h1>Fragile Masculinity</h1>
+          <p>A gentleman is not afraid of his softness.</p>
+        </div>
+
+        <div class="fragile-cover-grid">
+          <img
+            src="imatges/2.jpg"
+            alt="Model assegut amb vestit marró i flors"
+          />
+
+          <img src="imatges/3.jpg" alt="Model dret amb vestit formal" />
+        </div>
+
+        <button class="fragile-explore" type="button">EXPLORE MORE ↓</button>
+      </section>
+
+      <!-- CONTINGUT BLOQUEJAT -->
+      <div class="fragile-journey">
+        <!-- 02 — VULNERABILITY -->
+        <section class="fragile-chapter fragile-vulnerability">
+          <div class="fragile-chapter-label">02 / VULNERABILITY</div>
+
+          <div class="fragile-vulnerability-layout">
+            <div class="fragile-text">
+              <span>THE WEIGHT OF EXPECTATION</span>
+
+              <h2>Who decided what makes a man?</h2>
+
+              <p>Vulnerability / Intimacy / Identity</p>
+            </div>
+
+            <img src="imatges/7.jpg" alt="Retrat masculí en blanc i negre" />
+          </div>
+        </section>
+
+        <!-- 03 — BEYOND THE SURFACE -->
+        <section class="fragile-chapter fragile-surface">
+          <div class="fragile-chapter-label">03 / BEYOND THE SURFACE</div>
+
+          <div class="fragile-centered-text">
+            <h2>A little rebellion looks good on him.</h2>
+          </div>
+
+          <div class="fragile-surface-grid">
+            <img
+              src="imatges/11.jpg"
+              alt="Primer retrat masculí en blanc i negre"
+            />
+
+            <div class="fragile-surface-right">
+              <img
+                src="imatges/14.jpg"
+                alt="Segon retrat masculí en blanc i negre"
+              />
+
+              <img
+                src="imatges/15.jpg"
+                alt="Tercer retrat masculí en blanc i negre"
+              />
+            </div>
+          </div>
+
+          <p class="fragile-image-caption">
+            Identity / Emotion / Self-expression
+          </p>
+        </section>
+
+        <!-- 04 — BETWEEN EXPECTATIONS -->
+        <section class="fragile-chapter fragile-expectations">
+          <div class="fragile-chapter-label">04 / BETWEEN EXPECTATIONS</div>
+
+          <div class="fragile-centered-text">
+            <h2>Beyond appearances, there is a deeper truth.</h2>
+          </div>
+
+          <div class="fragile-expectations-grid">
+            <img
+              src="imatges/1.jpg"
+              alt="Retrat interior al costat d'una finestra"
+            />
+
+            <div class="fragile-expectations-right">
+              <img src="imatges/23.jpg" alt="Retrat amb guitarra" />
+
+              <img
+                src="imatges/25.jpg"
+                alt="Detall de mans tocant la guitarra"
+              />
+            </div>
+          </div>
+
+          <p class="fragile-image-caption">
+            Emotion / Reflection / Sensitivity
+          </p>
+        </section>
+
+        <!-- 05 — THE BODY BECOMES A LANGUAGE -->
+        <section class="fragile-chapter fragile-final">
+          <div class="fragile-chapter-label">
+            05 / THE BODY BECOMES A LANGUAGE
+          </div>
+
+          <div class="fragile-centered-text">
+            <h2>To be seen is to allow yourself to be vulnerable.</h2>
+          </div>
+
+          <div class="fragile-final-grid">
+            <div class="fragile-final-left">
+              <img
+                src="imatges/18.jpg"
+                alt="Primera fotografia de pintura corporal"
+              />
+
+              <img
+                src="imatges/22.jpg"
+                alt="Segona fotografia de pintura corporal"
+              />
+            </div>
+
+            <img src="imatges/5.jpg" alt="Model amb flors" />
+          </div>
+
+          <!-- FINAL CENTRAT -->
+          <div class="fragile-ending">
+            <p>Expression / Identity / Freedom</p>
+
+            <p class="fragile-end-button">END OF PROJECT</p>
+          </div>
+
+          <!-- NAVEGACIÓ INFERIOR -->
+          <nav class="fragile-bottom-nav" aria-label="Navegació del projecte">
+            <button class="fragile-back" type="button">
+              ← BACK TO GALLERY
+            </button>
+
+            <button class="fragile-next" type="button">NEXT PROJECT →</button>
+          </nav>
+        </section>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     PROJECT 06 — THE FASHION INDUSTRY
+========================================== -->
+
+    <section
+      id="project-fashion"
+      class="fashion-overlay is-locked"
+      aria-hidden="true"
+      aria-label="The Fashion Industry"
+    >
+      <!-- NAVEGACIÓ FIXA -->
+      <header class="fashion-navbar">
+        <span>CLAUDINE / 06</span>
+
+        <button class="fashion-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="fashion-content">
+        <!-- 01 / PORTADA -->
+        <section class="fashion-cover">
+          <p class="fashion-eyebrow">A CRITICAL FASHION EDITORIAL</p>
+
+          <h1>THE FASHION INDUSTRY</h1>
+
+          <p class="fashion-subtitle">When identity becomes a product.</p>
+
+          <div class="fashion-cover-layout">
+            <div class="fashion-cover-collage">
+              <img
+                src="imatges/8.1.jpeg"
+                alt="The Fashion Industry — Editorial"
+              />
+
+              <span class="fashion-cover-value">
+                VALUE / STATUS / IDENTITY
+              </span>
+            </div>
+          </div>
+
+          <button class="fashion-explore" type="button">EXPLORE MORE ↓</button>
+        </section>
+
+        <!-- CONTINGUT DESBLOQUEJABLE -->
+        <div class="fashion-journey">
+          <!-- 02 / BRANDED BODIES -->
+          <section class="fashion-chapter" id="fashion-branded">
+            <div class="fashion-section-heading">
+              <span>02 / BRANDED BODIES</span>
+              <h2>The body becomes a billboard.</h2>
+              <p>Consumption / Identity / Status</p>
+            </div>
+
+            <!-- 02 / BRANDED BODIES -->
+
+            <div class="fashion-editorial-image">
+              <!-- Composició esquerra -->
+              <div class="fashion-branded-left">
+                <img
+                  src="imatges/5.1.jpg"
+                  alt="Branded Bodies — composició editorial"
+                />
+              </div>
+
+              <!-- Fotografies dreta -->
+              <div class="fashion-branded-right">
+                <img
+                  src="imatges/1.1.jpg"
+                  alt="Model assegut amb roba de marques"
+                />
+
+                <img src="imatges/4.1.jpg" alt="Model amb jaqueta de marques" />
+              </div>
+            </div>
+          </section>
+
+          <!-- 03 / STRIPPED OF LABELS -->
+          <section class="fashion-chapter" id="fashion-labels">
+            <div class="fashion-section-heading">
+              <span>03 / STRIPPED OF LABELS</span>
+
+              <h2>What remains when the labels disappear?</h2>
+
+              <p>Identity / Vulnerability / Freedom</p>
+            </div>
+
+            <div class="fashion-labels-layout">
+              <img src="imatges/2.1.jpg" alt="Retrat en blanc i negre" />
+
+              <div class="fashion-labels-right">
+                <img
+                  src="imatges/6.1.jpg"
+                  alt="Composició editorial sobre identitat"
+                />
+
+                <img
+                  src="imatges/7.1.jpg"
+                  alt="Pàgina editorial del projecte"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- FINAL -->
+          <section class="fashion-ending">
+            <h2>The person is worth more than the label.</h2>
+
+            <p>END OF PROJECT</p>
+          </section>
+
+          <!-- NAVEGACIÓ FINAL -->
+          <nav class="fashion-bottom-nav">
+            <button class="fashion-back" type="button">
+              ← BACK TO GALLERY
+            </button>
+
+            <button class="fashion-next" type="button">NEXT PROJECT →</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     PROJECT 07 — APE STUDIOS
+========================================== -->
+
+    <section
+      id="project-ape"
+      class="ape-overlay is-locked"
+      aria-label="Ape Studios"
+      aria-hidden="true"
+    >
+      <header class="ape-navbar">
+        <span>CLAUDINE / 07</span>
+        <button class="ape-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="ape-content">
+        <!-- 01 / PORTADA -->
+        <section class="ape-cover">
+          <div class="ape-cover-heading">
+            <h1>APE STUDIOS</h1>
+            <p>An exploration of identity through fashion.</p>
+          </div>
+
+          <div class="ape-cover-grid">
+            <img src="imatges/ape 7.jpg" alt="Ape Studios — look gris" />
+            <img src="imatges/ape 5.jpg" alt="Ape Studios — retrat fosc" />
+            <img src="imatges/ape 11.jpg" alt="Ape Studios — look denim" />
+          </div>
+
+          <button class="ape-explore" type="button">EXPLORE MORE ↓</button>
+        </section>
+
+        <!-- CONTINGUT DESBLOQUEJABLE -->
+        <div class="ape-journey">
+          <!-- 02 / LITTLE MORE — MORE -->
+          <section class="ape-chapter ape-light">
+            <div class="ape-heading">
+              <span>02 / LITTLE MORE — MORE</span>
+              <h2>Elegance in simplicity.</h2>
+            </div>
+
+            <div class="ape-elegance-grid">
+              <img
+                class="ape-elegance-main"
+                src="imatges/ape 2.jpg"
+                alt="Retrat editorial de moda"
+              />
+
+              <div class="ape-elegance-right">
+                <img src="imatges/ape 6.jpg" alt="Look gris complet" />
+                <img src="imatges/ape 1.jpg" alt="Retrat amb les mans" />
+              </div>
+            </div>
+          </section>
+
+          <!-- 03 / THE SHADOW — BLACK -->
+          <section class="ape-chapter ape-dark">
+            <div class="ape-heading">
+              <span>03 / THE SHADOW — BLACK</span>
+              <h2>Beauty beyond the light.</h2>
+            </div>
+
+            <div class="ape-shadow-grid">
+              <img src="imatges/ape 3.jpg" alt="Retrat amb jaqueta negra" />
+              <img src="imatges/ape 4.jpg" alt="Retrat editorial fosc" />
+            </div>
+          </section>
+
+          <!-- 04 / THE EXPRESSION — BLUE -->
+          <section class="ape-chapter ape-blue">
+            <div class="ape-heading">
+              <span>04 / THE EXPRESSION — BLUE</span>
+              <h2>A different way of seeing.</h2>
+            </div>
+
+            <div class="ape-blue-gallery">
+              <img
+                class="ape-blue-main"
+                src="imatges/ape 8.jpg"
+                alt="Primer pla amb denim"
+              />
+
+              <div class="ape-blue-bottom">
+                <img src="imatges/ape 10.jpg" alt="Look denim frontal" />
+                <img src="imatges/ape 9.jpg" alt="Retrat denim de perfil" />
+              </div>
+            </div>
+
+            <div class="ape-ending">END OF PROJECT</div>
+
+            <nav class="ape-bottom-nav" aria-label="Navegació del projecte">
+              <button class="ape-back" type="button">← BACK TO GALLERY</button>
+
+              <button class="ape-next" type="button">NEXT PROJECT →</button>
+            </nav>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     PROJECT 08 — FRAGMENTS OF SUMMER
+========================================== -->
+
+    <section
+      id="project-summer"
+      class="summer-overlay is-locked"
+      aria-label="Fragments of Summer"
+      aria-hidden="true"
+    >
+      <header class="summer-navbar">
+        <span>CLAUDINE / 08</span>
+        <button class="summer-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="summer-content">
+        <!-- 01 / COVER -->
+        <section class="summer-cover">
+          <div class="summer-cover-heading">
+            <span>A VISUAL DIARY OF SUMMER AND MEMORY</span>
+            <h1>Fragments of Summer</h1>
+            <p>Some moments stay long after summer fades.</p>
+          </div>
+
+          <div class="summer-image-wrap">
+            <img
+              class="summer-cover-image"
+              src="imatges/sum3.jpg"
+              alt="Silueta davant del mar al capvespre"
+            />
+            <div class="summer-sunlight" aria-hidden="true"></div>
+          </div>
+
+          <button class="summer-explore" type="button">EXPLORE MORE ↓</button>
+        </section>
+
+        <!-- CONTINGUT DESBLOQUEJABLE -->
+        <div class="summer-journey">
+          <!-- 02 / GOLDEN HOURS -->
+          <section class="summer-chapter">
+            <div class="summer-heading">
+              <span>01 / GOLDEN HOURS</span>
+              <h2>The beauty of moments that never last.</h2>
+            </div>
+
+            <div class="summer-golden-grid">
+              <img src="imatges/sum2.jpg" alt="Sol sobre el mar" />
+              <div class="summer-golden-side">
+                <img src="imatges/sum1.jpg" alt="Persones al capvespre" />
+                <img
+                  src="imatges/sum4.jpg"
+                  alt="Platja al capvespre"
+                  class="summer-golden-landscape"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- 03 / SUMMER MEMORIES -->
+          <section class="summer-chapter">
+            <div class="summer-heading">
+              <span>02 / SUMMER MEMORIES</span>
+              <h2>Some memories feel like sunlight.</h2>
+            </div>
+
+            <div class="summer-memories-grid">
+              <img src="imatges/sum6.jpg" alt="Records a la platja" />
+              <img src="imatges/sum5.jpg" alt="Capvespre de verano" />
+            </div>
+
+            <img
+              class="summer-wide-image"
+              src="imatges/sum7.jpg"
+              alt="Persona mirant el mar"
+            />
+          </section>
+
+          <!-- 04 / BETWEEN LAND AND SEA -->
+          <section class="summer-chapter">
+            <div class="summer-heading">
+              <span>03 / BETWEEN LAND AND SEA</span>
+              <h2>There is beauty in simply being.</h2>
+            </div>
+
+            <div class="summer-land-grid">
+              <img
+                class="summer-land-left"
+                src="imatges/sum9.jpg"
+                alt="Arquitectura al costat del mar"
+              />
+
+              <div class="summer-land-right">
+                <img src="imatges/sum10.jpg" alt="Penya-segats" />
+                <img src="imatges/sum8.jpg" alt="Estiu a la costa" />
+              </div>
+            </div>
+          </section>
+
+          <!-- 05 / THE LAST LIGHT -->
+          <section class="summer-chapter summer-final">
+            <div class="summer-heading">
+              <span>04 / THE LAST LIGHT</span>
+              <h2>Every ending carries a little light.</h2>
+            </div>
+
+            <img
+              class="summer-final-image"
+              src="imatges/sum11.jpg"
+              alt="Última llum del capvespre"
+            />
+
+            <div class="summer-ending">
+              <h2>We never really leave the places we carry within us.</h2>
+              <p>END OF PROJECT</p>
+            </div>
+          </section>
+
+          <nav class="summer-bottom-nav">
+            <button class="summer-back" type="button">← BACK TO GALLERY</button>
+            <button class="summer-next" type="button">NEXT PROJECT →</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     PROJECT 09 — AN INNER WORLD
+========================================== -->
+
+    <section
+      id="project-painting"
+      class="painting-overlay is-locked"
+      aria-label="An Inner World"
+      aria-hidden="true"
+    >
+      <!-- EMOTIONS IN MOTION — TRANSICIÓ D'ENTRADA -->
+      <div class="painting-transition" aria-hidden="true">
+        <span class="painting-stroke painting-stroke-one"></span>
+        <span class="painting-stroke painting-stroke-two"></span>
+        <span class="painting-stroke painting-stroke-three"></span>
+      </div>
+
+      <header class="painting-navbar">
+        <span>CLAUDINE / 09</span>
+        <button class="painting-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="painting-content">
+        <section class="painting-cover">
+          <div class="painting-heading">
+            <span>AN EXPLORATION THROUGH PAINTING</span>
+            <h1>An Inner World</h1>
+            <p>Where emotions take shape and colour.</p>
+          </div>
+
+          <div class="painting-gallery">
+            <div class="painting-image">
+              <img src="imatges/cycle of life.jpg" alt="Cycle of Life" />
+            </div>
+
+            <div class="painting-image">
+              <img src="imatges/venus.jpg" alt="Venus" />
+            </div>
+          </div>
+
+          <p class="painting-quote">An exploration without an ending.</p>
+
+          <button class="painting-explore" type="button">
+            SCROLL TO EXPLORE ↓
+          </button>
+        </section>
+
+        <div class="painting-ending">
+          <span>END OF PROJECT</span>
+        </div>
+
+        <nav class="painting-bottom-nav">
+          <button class="painting-back" type="button">← BACK TO GALLERY</button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     PROJECT 10 — RAW?
+========================================== -->
+
+    <section id="project-raw" class="raw-overlay is-locked" aria-hidden="true">
+      <header class="raw-navbar">
+        <span>CLAUDINE / 01</span>
+        <button class="raw-close" type="button">CLOSE ×</button>
+      </header>
+
+      <div class="raw-content">
+        <!-- 01 / PORTADA -->
+
+        <section class="raw-cover">
+          <p class="raw-eyebrow">AN ARTISTIC EXPLORATION</p>
+          <h1>RAW?</h1>
+
+          <div class="raw-video-frame">
+            <video
+              class="raw-video"
+              src="imatges/raw-video.mp4"
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <button class="raw-play" type="button" aria-label="Reproduir vídeo">
+              ▶
+            </button>
+
+            <span class="raw-video-caption">
+              PRESS PLAY TO ENTER THE CHAOS
+            </span>
+          </div>
+
+          <button class="raw-explore" type="button">EXPLORE MORE ↓</button>
+        </section>
+
+        <!-- 02 / THE MANIFESTO -->
+
+        <section class="raw-manifesto" id="raw-manifesto">
+          <p class="raw-section-label">02 / THE MANIFESTO</p>
+
+          <h2>Must an artist suffer to create?</h2>
+
+          <div class="raw-magazine-layout">
+            <div class="raw-magazine-image">
+              <img
+                src="imatges/raw-revista.jpg"
+                alt="RAW? — Revista experimental"
+              />
+            </div>
+
+            <div class="raw-magazine-text">
+              <span>ISSUE N.01</span>
+
+              <h3>BORN<br />TO<br />BREAK.</h3>
+
+              <p>ART / IDENTITY / REBELLION</p>
+              <div class="raw-magazine-line"></div>
+
+              <p class="raw-magazine-quote">No rules.<br />No limits.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 / VISUAL EXPERIMENTS -->
+
+        <section class="raw-gallery">
+          <div class="raw-gallery-heading">
+            <span>03 / VISUAL EXPERIMENTS</span>
+            <h2>NO RULES. NO LIMITS.</h2>
+            <p>Identity / Chaos / Freedom</p>
+          </div>
+
+          <div class="raw-gallery-grid">
+            <div class="raw-gallery-item">
+              <img
+                src="imatges/raw-photo-01.jpg"
+                alt="RAW? — Fotografia experimental"
+              />
+            </div>
+
+            <div class="raw-gallery-item">
+              <img src="imatges/raw-photo-02.jpg" alt="RAW? — Fotografia 02" />
+            </div>
+
+            <div class="raw-gallery-item">
+              <img src="imatges/raw-photo-03.jpg" alt="RAW? — Fotografia 03" />
+            </div>
+
+            <div class="raw-gallery-item">
+              <img src="imatges/raw-photo-04.jpg" alt="RAW? — Fotografia 04" />
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 / END OF PROJECT -->
+
+        <footer class="raw-ending">
+          <p class="raw-end-label">END OF PROJECT</p>
+
+          <nav class="raw-bottom-nav" aria-label="Navegació RAW">
+            <button class="raw-back" type="button">← BACK TO GALLERY</button>
+
+            <button class="raw-next" type="button">NEXT PROJECT →</button>
+          </nav>
+        </footer>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     03 / ABOUT ME
+========================================== -->
+
+    <section id="about" class="about-section">
+      <a href="#" class="back-to-home"> ← BACK TO HOME </a>
+      <div class="about-container">
+        <div class="about-top">
+          <span>03 / ABOUT ME</span>
+        </div>
+
+        <div class="about-layout">
+          <!-- CARRUSEL DE FOTOGRAFIES -->
+          <div class="about-photo-slider">
+            <!-- FOTO 01 -->
+            <div class="about-slide is-active">
+              <img
+                src="imatges/about me.jpg"
+                alt="Claudine estirada amb flors blanques"
+              />
+            </div>
+
+            <!-- FOTO 02 -->
+            <div class="about-slide">
+              <img
+                src="imatges/about me2.jpg"
+                alt="Retrat de Claudine amb flors"
+              />
+            </div>
+
+            <!-- FOTO 03 -->
+            <div class="about-slide">
+              <img
+                src="imatges/about me 3.jpg"
+                alt="Fotografia artística de Claudine"
+              />
+            </div>
+
+            <!-- FOTO 04 -->
+            <div class="about-slide">
+              <img
+                src="imatges/about me 4.jpg"
+                alt="Retrat de Claudine amb il·luminació càlida"
+              />
+            </div>
+
+            <!-- COMPTADOR -->
+            <div class="about-slide-counter">
+              <span class="about-current">01</span>
+              <span> / </span>
+              <span class="about-total">04</span>
+            </div>
+          </div>
+
+          <!-- TEXT -->
+          <div class="about-text">
+            <h2>CLAUDINE</h2>
+
+            <p class="about-role">
+              Artista multidisciplinària i directora artística.
+            </p>
+
+            <p class="about-description">
+              Exploro la fotografia, la pintura i el vídeo com a eines per
+              construir universos visuals propis, combinant diferents
+              disciplines i formes d'expressió artística.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     04 / CONTACT
+========================================== -->
+
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <!-- CAPÇALERA -->
+
+        <div class="contact-top">
+          <span>04 / CONTACT</span>
+
+          <a href="#" class="back-to-home"> ← BACK TO HOME </a>
+        </div>
+
+        <!-- CONTINGUT CENTRAL -->
+        <div class="contact-content">
+          <h2>LET'S CREATE SOMETHING TOGETHER.</h2>
+
+          <p>
+            Open to collaborations, creative projects and artistic
+            opportunities.
+          </p>
+
+          <a
+            class="contact-button"
+            href="mailto:claudia.garcia.bigata@gmail.com"
+          >
+            GET IN TOUCH ↗
+          </a>
+        </div>
+
+        <!-- PEU DE PÀGINA -->
+        <footer class="contact-footer">
+          <span>© CLAUDINE 2026</span>
+
+          <div class="contact-links">
+            <a
+              href="https://www.instagram.com/itsclaudine._/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              INSTAGRAM
+            </a>
+            <a href="mailto:claudia.garcia.bigata@gmail.com">EMAIL</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </body>
+</html>
