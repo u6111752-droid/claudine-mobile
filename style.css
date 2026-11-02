@@ -4970,6 +4970,7 @@ html.portfolio-actiu {
 
   .contact-footer {
     font-size: 9px;
+    transform: translateY(-50px);
   }
 
   .contact-links {
@@ -7477,5 +7478,19 @@ body.is-revealing-work::after {
     transform: scale(1.35) translateY(-6%);
     transform-origin: center center;
     border-radius: 0;
+  }
+}
+
+/* CLAUDINE — AJUST GALERIA SAFARI IPHONE */
+@media (max-width: 700px) {
+  .gallery-horizontal {
+    height: 100svh;
+    min-height: 0;
+  }
+
+  .gallery-about-link {
+    bottom: 85px;
+    padding: 12px 16px;
+    z-index: 30;
   }
 }

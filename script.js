@@ -164,51 +164,6 @@ window.addEventListener(
   { passive: true },
 );
 
-/* ==========================================
-   BLOQUEJAR SCROLL GALERIA → ABOUT ME
-========================================== */
-
-(() => {
-  const gallery = document.querySelector("#gallery");
-  const about = document.querySelector("#about");
-  const aboutButton = document.querySelector(".gallery-about-link");
-
-  if (!gallery || !about || !aboutButton) return;
-
-  let aboutUnlocked = false;
-
-  aboutButton.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    aboutUnlocked = true;
-
-    about.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!portfolioObert || aboutUnlocked) return;
-
-      const galleryBottom =
-        gallery.getBoundingClientRect().bottom + window.scrollY;
-
-      const maxScroll = galleryBottom - window.innerHeight;
-
-      if (window.scrollY > maxScroll) {
-        window.scrollTo({
-          top: maxScroll,
-          behavior: "instant",
-        });
-      }
-    },
-    { passive: true },
-  );
-})();
-
 /* LE SUBLIME — OVERLAY */
 
 const sublimeOverlay = document.querySelector("#project-sublime");
@@ -1828,35 +1783,34 @@ document.querySelectorAll(".back-to-home").forEach((button) => {
   });
 });
 
-
 /* ==========================================
    CLAUDINE — MOBILE / PAS 1: MENU
 ========================================== */
 (() => {
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  const nav = document.querySelector('#mobile-navigation');
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const nav = document.querySelector("#mobile-navigation");
   if (!toggle || !nav) return;
 
   function setOpen(open) {
-    nav.classList.toggle('is-mobile-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Tancar menú' : 'Obrir menú');
-    toggle.textContent = open ? 'CLOSE ×' : 'MENU ☰';
+    nav.classList.toggle("is-mobile-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Tancar menú" : "Obrir menú");
+    toggle.textContent = open ? "CLOSE ×" : "MENU ☰";
   }
 
-  toggle.addEventListener('click', () => {
-    setOpen(!nav.classList.contains('is-mobile-open'));
+  toggle.addEventListener("click", () => {
+    setOpen(!nav.classList.contains("is-mobile-open"));
   });
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => setOpen(false));
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
   });
-  document.addEventListener('click', event => {
-    if (!event.target.closest('.navbar')) setOpen(false);
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".navbar")) setOpen(false);
   });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') setOpen(false);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
   });
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     if (window.innerWidth > 700) setOpen(false);
   });
 })();
