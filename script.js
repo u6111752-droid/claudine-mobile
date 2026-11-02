@@ -1,5 +1,28 @@
 /* CLAUDINE — SCRIPT.JS */
 
+/* MOBILE — OBRIR PROJECTES NOMÉS DES DE LA FOTOGRAFIA */
+
+document.addEventListener(
+  "click",
+  (event) => {
+    if (window.innerWidth > 700) return;
+
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const card = target.closest(".gallery-card");
+    if (!card) return;
+
+    const image = target.closest("img");
+
+    if (!image || !card.contains(image)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  },
+  true,
+);
+
 /* ANIMACIÓ DEL POEMA */
 const introContent = document.querySelector(".intro-content");
 
